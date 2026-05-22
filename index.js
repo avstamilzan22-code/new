@@ -14,7 +14,7 @@ const axios = require('axios');
 const path = require('path');
 
 // Owner numbers
-const ownerNumber = ["94764642432"];
+const { normalizeNumber, isOwner: checkOwner, isRealOwner, getOwnerList, getBotJids } = require('./lib/owner');
 
 // ==================== LOCAL FILES LOADER ====================
 function loadLocalFiles() {
@@ -73,13 +73,20 @@ if (!fs.existsSync(CREDS)) {
   }
   
   let session = config.SESSION_ID.trim();
-  if (!session.includes("SHITSU-MD~")) {
+  const prefix = "SHITSU-MD~";
+  if (!session.startsWith(prefix)) {
     console.log("❌ Invalid SHITSU-MD session format");
     process.exit(1);
   }
   
-  const decoded = Buffer.from(session.substring(7), 'base64').toString('utf8');
-  JSON.parse(decoded);
+  let decoded;
+  try {
+    decoded = Buffer.from(session.slice(prefix.length), 'base64').toString('utf8');
+    JSON.parse(decoded);
+  } catch (e) {
+    console.error("❌ Failed to decode or parse SESSION_ID:", e.message);
+    process.exit(1);
+  }
   
   fs.mkdirSync(AUTH_DIR, { recursive: true });
   fs.writeFileSync(CREDS, decoded, { encoding: 'utf8' });
@@ -161,7 +168,7 @@ async function getProfilePicture(sock, jid) {
     const ppUrl = await sock.profilePictureUrl(jid, 'image');
     return ppUrl;
   } catch {
-    return 'https://n.uguu.se/BlGoHUJU.jpg'; // Default image
+    return 'https://files.catbox.moe/n2c0lu.png'; // Default image
   }
 }
 
@@ -201,7 +208,7 @@ async function connectToWA() {
   });
 
   // Connection update handler
-  sock.ev.on('connection.update', (update) => {
+  sock.ev.on('connection.update', async (update) => {
     const { connection, lastDisconnect } = update;
     
     if (connection === 'close') {
@@ -245,20 +252,22 @@ async function connectToWA() {
       const aliveMsg = `*╭──────────────●●►*\n> *SHITSU-MD CONNECTED SUCCESSFULLY*\n\n> *Type ${prefix}menu to view commands*  \n\n*╭⊱✫ SHITSU MD ✫⊱╮*\n*│✫📂 Bot Name: ${botConfig.BOT_NAME}*\n*│✫🛡️ Owner: ${config.OWNER_NAME}*\n*│✫♻️ Prefix: ${prefix}*\n*│✫🌍 Mode: ${config.MODE}*\n*│✫⏰ Uptime: ${runtime(process.uptime())}*\n*╰──────────────●●►*\n\n> Enjoy Using SHITSU MD`;
       
       // Image URL for connection message
-      const imageUrl = 'https://n.uguu.se/BlGoHUJU.jpg';
+      const imageUrl = 'https://files.catbox.moe/n2c0lu.png';
       
       try {
+        const ownerJid = getOwnerList(sock.user.id)[0] + '@s.whatsapp.net';
+
         // Send to owner with image
-        sock.sendMessage(ownerNumber[0] + '923237045919@s.whatsapp.net', {
+        await sock.sendMessage(ownerJid, {
           image: { url: imageUrl },
           caption: aliveMsg
-        }).catch(() => {
+        }).catch(async () => {
           // Fallback to text if image fails
-          sock.sendMessage(ownerNumber[0] + '@s.whatsapp.net', { text: aliveMsg });
+          await sock.sendMessage(ownerJid, { text: aliveMsg });
         });
         
         // Send to bot's own number
-        sock.sendMessage(sock.user.id, {
+        await sock.sendMessage(sock.user.id, {
           image: { url: imageUrl },
           caption: aliveMsg
         }).catch(() => {
@@ -268,7 +277,7 @@ async function connectToWA() {
         console.log("✅ Connection message sent with image");
       } catch (err) {
         console.log("⚠️ Could not send connection message with image, sending text only");
-        sock.sendMessage(ownerNumber[0] + '@s.whatsapp.net', { text: aliveMsg });
+        sock.sendMessage(getOwnerList(sock.user.id)[0] + '@s.whatsapp.net', { text: aliveMsg });
       }
     }
   });
@@ -319,8 +328,11 @@ async function connectToWA() {
       };
       
       for (const participant of participants) {
-        const participantJid = participant.split('@')[0];
-        const pushName = participant.split('@')[0];
+        const participantFullJid = typeof participant === 'string'
+          ? participant
+          : participant?.id || participant?.jid || '';
+        const participantJid = participantFullJid.split('@')[0] || 'unknown';
+        const pushName = participantJid;
         
         if (action === 'add') {
           // WELCOME MESSAGE - Only if enabled
@@ -361,7 +373,7 @@ async function connectToWA() {
           if (settings.goodbye) {
             try {
               // Get user's profile picture
-              const ppUrl = await getProfilePicture(sock, participant).catch(() => 'https://n.uguu.se/BlGoHUJU.jpg');
+              const ppUrl = await getProfilePicture(sock, participant).catch(() => 'https://files.catbox.moe/n2c0lu.png');
               
               // Format goodbye message with variables
               let goodbyeText = settings.goodbyeMsg || DEFAULT_GOODBYE;
@@ -470,10 +482,24 @@ async function connectToWA() {
       const senderNumber = sender.split('@')[0];
       const botNumber = sock.user.id.split(':')[0] + '@s.whatsapp.net';
       const isGroup = from.endsWith('@g.us');
-      const isOwner = ownerNumber.includes(senderNumber);
+      const ownerList = getOwnerList(sock.user.id);
+      const isOwner = checkOwner(sender, sock.user);
       const pushName = msg.pushName || senderNumber;
       const botNumberPure = sock.user.id.split(':')[0];
       const isMe = senderNumber === botNumberPure;
+      
+      // Debug owner-check
+      if (isCmd) {
+        console.log('🔍 [OWNER-DEBUG] sender raw:', sender);
+        console.log('🔍 [OWNER-DEBUG] sender normalized:', normalizeNumber(sender));
+        console.log('🔍 [OWNER-DEBUG] ownerList:', ownerList);
+        console.log('🔍 [OWNER-DEBUG] botJids:', getBotJids(sock.user));
+        console.log('🔍 [OWNER-DEBUG] isOwner:', isOwner);
+        console.log('🔍 [OWNER-DEBUG] sock.user.id:', sock.user?.id);
+        console.log('🔍 [OWNER-DEBUG] sock.user.lid:', sock.user?.lid);
+        console.log('🔍 [OWNER-DEBUG] config.OWNER_NUMBER:', config.OWNER_NUMBER);
+        console.log('🔍 [OWNER-DEBUG] config.DEV:', config.DEV);
+      }
       
       // Get mentions
       let mentions = [];
@@ -807,7 +833,7 @@ Commands:
               const originalSender = deletedMsg.key.participant || deletedMsg.key.remoteJid;
               
               // Send to owner's inbox
-              const sendTo = ownerNumber[0] + '@s.whatsapp.net';
+              const sendTo = getOwnerList(sock.user.id)[0] + '@s.whatsapp.net';
               
               // Get original message content
               let originalContent = '';

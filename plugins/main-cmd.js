@@ -7,6 +7,7 @@ const axios = require('axios');
 const { fakevCard } = require('../lib/fakevCard');
 const bot = require('../lib/bot')
 const config = require('../setting')
+const { normalizeNumber, isOwner: checkOwner, getOwnerList } = require('../lib/owner')
 //========================================About==================================================
 cmd({
     pattern: "about",
@@ -946,8 +947,8 @@ cmd({
 }, 
 async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
     try {
-        if (!isOwner) return;
-
+        isOwner = checkOwner(sender, conn.user);
+        if (!isOwner) return reply("❌ You must be the bot owner to use this command.");
 
         let work;
         switch (config.MODE) {

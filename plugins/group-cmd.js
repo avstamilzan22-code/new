@@ -28,7 +28,7 @@ async (conn, mek, m, { from, sender, isGroup, reply, quoted, participants }) => 
         try {
             ppUrl = await conn.profilePictureUrl(userJid, 'image');
         } catch {
-            ppUrl = 'https://i.ibb.co/KhYC4FY/1221bc0bdd2354b42b293317ff2adbcf-icon.png';
+            ppUrl = 'https://files.catbox.moe/n2c0lu.png';
         }
 
         // 4. GET NAME (MULTI-SOURCE FALLBACK)
@@ -761,7 +761,7 @@ if (!isAdmins) return reply('You Are Not A Admin')
                 reply(`Open time ${q} starting from now`)
                 setTimeout(() => {
                     var nomor = mek.participant
-                    const open = `*OPEN TIME* THE GROUP WAS OPENED BY KIRA MD TO APPROVED ADMIN\n NOW MEMBERS CAN SEND MESSAGES 🔓`
+                    const open = `*OPEN TIME* THE GROUP WAS OPENED BY SHITSU MD TO APPROVED ADMIN\n NOW MEMBERS CAN SEND MESSAGES 🔓`
                     conn.groupSettingUpdate(from, 'not_announcement')
                     reply(open)
                 }, timer)
@@ -798,7 +798,7 @@ if (!isAdmins) return reply('You Are Not A Admin')
                 reply(`Close time ${q} starting from now`)
                 setTimeout(() => {
                     var nomor = m.participant
-                    const close = `*CLOSE TIME* GROUP CLOSED BY KIRA MD AT APPROVED ADMIN\nNOW ONLY ADMIN CAN SEND MESSAGES 🔐`
+                    const close = `*CLOSE TIME* GROUP CLOSED BY SHITSU MD AT APPROVED ADMIN\nNOW ONLY ADMIN CAN SEND MESSAGES 🔐`
                     conn.groupSettingUpdate(from, 'announcement')
                     reply(close)
                 }, timer)
@@ -963,7 +963,7 @@ const l = console.log
 if (!isGroup) return reply('This Command Only For Group')
 if (!isBotAdmins) return reply('You Not A Bot Owner')
 if (!isAdmins) return reply('You Are Not A Admin')
-const G_MUTE = `*GROUP IS CLOSED BY KIRA-MD BOT OWNER*`;
+const G_MUTE = `*GROUP IS CLOSED BY SHITSU-MD BOT OWNER*`;
         await conn.groupSettingUpdate(mek.chat, 'announcement')
         await conn.sendMessage(from, { react: { text: `✅`, key: mek.key }})
         return reply(G_MUTE);
@@ -988,7 +988,7 @@ try{
 if (!isGroup) return reply('This Command Only For Group')
 if (!isBotAdmins) return reply('You Not A Bot Owner')
 if (!isAdmins) return reply('You Are Not A Admin')
-const G_UNMUTE = `*GROUP IS OPEN BY KIRA-MD BOT OWNER*`;
+const G_UNMUTE = `*GROUP IS OPEN BY SHITSU-MD BOT OWNER*`;
         await conn.groupSettingUpdate(mek.chat, 'not_announcement')
         await conn.sendMessage(from, { react: { text: `✅`, key: mek.key }, quoted: mek })
         return reply(G_UNMUTE);
@@ -1041,7 +1041,7 @@ if (!isAdmins) return reply('You Are Not A Admin')
 let users = mek.mentionedJid ? mek.mentionedJid : mek.quoted ? mek.quoted.sender : q.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 await conn.groupParticipantsUpdate(mek.chat, [users], 'demote')
 await conn.sendMessage(from, { react: { text: `✅`, key: mek.key }})
-reply('*GROUP ADMIN DEMOTE BY KIRA-MD BOT OWNER*') 
+reply('*GROUP ADMIN DEMOTE BY SHITSU-MD BOT OWNER*') 
 } catch (e) {
 reply('*ERROR*')
 console.log(e)

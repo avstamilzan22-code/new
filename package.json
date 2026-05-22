@@ -1,12 +1,12 @@
 {
-  "name": "kira-md",
+  "name": "shitsu-md",
   "version": "9.0.0",
-  "description": "KIRA-MD WhatsApp bot created by ArslanMD Official",
+  "description": "SHITSU-MD WhatsApp bot",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --name KIRA-MD",
-    "stop": "pm2 stop KIRA-MD",
-    "restart": "pm2 restart KIRA-MD"
+    "start": "pm2 start index.js --deep-monitoring --attach --name SHITSU-MD",
+    "stop": "pm2 stop SHITSU-MD",
+    "restart": "pm2 restart SHITSU-MD"
   },
   "dependencies": {
     "@dark-yasiya/news-scrap": "latest",

@@ -1,0 +1,1548 @@
+
+> kira-md@9.0.0 start
+> pm2 start index.js --deep-monitoring --attach --name KIRA-MD
+
+[32m[PM2] [39mStarting /workspaces/new/index.js in fork_mode (1 instance)
+[32m[PM2] [39mDone.
+┌────┬────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id │ name       │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├────┼────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ [1m[36m0[39m[22m  │ KIRA-MD    │ default     │ 9.0.0   │ [7m[1mfork[22m[27m    │ 51236    │ 0s     │ 0    │ [32m[1monline[22m[39m    │ 0%       │ 8.5mb    │ [1mcod… │ [90mdisabled[39m │
+└────┴────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+[36m[PM2][INFO] [39mLog streaming apps id: [36m0[39m, exit with Ctrl-C or will exit in 10secs
+[32m0|KIRA-MD  | [39m📂 Loading local lib and plugins...
+[32m0|KIRA-MD  | [39m✅ lib folder found
+[32m0|KIRA-MD  | [39m📚 Found 7 lib files
+[32m0|KIRA-MD  | [39m✅ plugins folder found
+[32m0|KIRA-MD  | [39m🔌 Found 2 plugin files
+[32m0|KIRA-MD  | [39m✅ shitsu.html found in lib folder
+[32m0|KIRA-MD  | [39m✅ Local files loaded successfully!
+[32m0|KIRA-MD  | [39m🌐 Web server running on port 9090
+[32m0|KIRA-MD  | [39m✅ Using local lib and plugins only
+[32m0|KIRA-MD  | [39m🤖 SHITSU-MD Connecting with prefix: "."
+[32m0|KIRA-MD  | [39m✅ Lib files loaded successfully
+[32m0|KIRA-MD  | [39m✅ SHITSU-MD Bot connected to WhatsApp!
+[32m0|KIRA-MD  | [39m🔌 Loading plugins...
+[32m0|KIRA-MD  | [39m  ✅ Loaded: group-cmd.js
+[32m0|KIRA-MD  | [39mSHITSU-MD ♻ Auto Bio Started
+[32m0|KIRA-MD  | [39m  ✅ Loaded: main-cmd.js
+[32m0|KIRA-MD  | [39m✅ Plugins loaded: 2/2
+[32m0|KIRA-MD  | [39mClosing session: SessionEntry {
+[32m0|KIRA-MD  | [39m  _chains: {
+[32m0|KIRA-MD  | [39m    'BVbKFl+YHA6t+JAqTG4Q1D7CdijgLLbI5rx7jmBt4Op2': { chainKey: [Object], chainType: 2, messageKeys: {} },
+[32m0|KIRA-MD  | [39m    BdshqXpkiTFRlJbzwAZcN3hhNLlJsU3wnZHPChXVug4R: { chainKey: [Object], chainType: 2, messageKeys: {} },
+[32m0|KIRA-MD  | [39m    BSTnKonHuPZRaIIM73ujFO62rxwXoZrmiinBSaxKuko1: { chainKey: [Object], chainType: 1, messageKeys: {} }
+[32m0|KIRA-MD  | [39m  },
+[32m0|KIRA-MD  | [39m  registrationId: 959102141,
+[32m0|KIRA-MD  | [39m  currentRatchet: {
+[32m0|KIRA-MD  | [39m    ephemeralKeyPair: {
+[32m0|KIRA-MD  | [39m      pubKey: <Buffer 05 24 e7 2a 89 c7 b8 f6 51 68 82 0c ef 7b a3 14 ee b6 af 1c 17 a1 9a e6 8a 29 c1 49 ac 4a ba 4a 35>,
+[32m0|KIRA-MD  | [39m      privKey: <Buffer f8 41 48 9c c2 84 f4 90 b3 da 0f 0d fe 53 1f fd 3f 85 6b 6f 92 a7 fb 11 17 05 29 9d 8d a3 36 7b>
+[32m0|KIRA-MD  | [39m    },
+[32m0|KIRA-MD  | [39m    lastRemoteEphemeralKey: <Buffer 05 db 21 a9 7a 64 89 31 51 94 96 f3 c0 06 5c 37 78 61 34 b9 49 b1 4d f0 9d 91 cf 0a 15 d5 ba 0e 11>,
+[32m0|KIRA-MD  | [39m    previousCounter: 0,
+[32m0|KIRA-MD  | [39m    rootKey: <Buffer 96 f2 b6 b0 0c 51 b5 49 01 d5 f1 ae 57 f8 65 31 b9 cb 3f 11 6a 04 83 97 98 98 70 87 aa 39 62 15>
+[32m0|KIRA-MD  | [39m  },
+[32m0|KIRA-MD  | [39m  indexInfo: {
+[32m0|KIRA-MD  | [39m    baseKey: <Buffer 05 56 96 0f 63 7b 5a f9 d5 d5 5b 3a d1 4b 9e c7 20 18 47 82 dc 01 7d 04 25 41 7b 51 35 3b f4 79 15>,
+[32m0|KIRA-MD  | [39m    baseKeyType: 1,
+[32m0|KIRA-MD  | [39m    closed: -1,
+[32m0|KIRA-MD  | [39m    used: 1779424259805,
+[32m0|KIRA-MD  | [39m    created: 1779424248930,
+[32m0|KIRA-MD  | [39m    remoteIdentityKey: <Buffer 05 4e a8 0a 15 bf 72 c0 0a bd e8 19 ca 5a f1 87 be e0 b2 22 9a 4f 00 53 bd 01 a3 b8 e0 5b f1 a9 5e>
+[32m0|KIRA-MD  | [39m  }
+[32m0|KIRA-MD  | [39m}
+[32m0|KIRA-MD  | [39mRemoving old closed session: SessionEntry {
+[32m0|KIRA-MD  | [39m  _chains: {
+[32m0|KIRA-MD  | [39m    'BXQ/cNoCURmoMXWeBiOKSD62/5bvTMofJDae6YZ5ic0D': { chainKey: [Object], chainType: 1, messageKeys: {} }
+[32m0|KIRA-MD  | [39m  },
+[32m0|KIRA-MD  | [39m  registrationId: 959102141,
+[32m0|KIRA-MD  | [39m  currentRatchet: {
+[32m0|KIRA-MD  | [39m    ephemeralKeyPair: {
+[32m0|KIRA-MD  | [39m      pubKey: <Buffer 05 74 3f 70 da 02 51 19 a8 31 75 9e 06 23 8a 48 3e b6 ff 96 ef 4c ca 1f 24 36 9e e9 86 79 89 cd 03>,
+[32m0|KIRA-MD  | [39m      privKey: <Buffer 20 52 f9 21 e7 f7 90 09 f5 55 2c 8b 8f b9 3d d7 61 42 89 c6 f8 85 da d3 69 d2 8d 90 f3 2a 8c 55>
+[32m0|KIRA-MD  | [39m    },
+[32m0|KIRA-MD  | [39m    lastRemoteEphemeralKey: <Buffer 05 6e 87 60 db c3 f4 ba 58 5d 05 97 53 9e a1 88 6d 11 79 b0 bb c0 9c cc f5 59 e1 01 a7 93 b4 89 46>,
+[32m0|KIRA-MD  | [39m    previousCounter: 0,
+[32m0|KIRA-MD  | [39m    rootKey: <Buffer 12 70 93 31 fc 09 e4 b3 78 be a8 50 89 f5 ac c3 ab 61 46 b9 e2 51 a2 e6 00 b3 d0 43 80 d2 87 d4>
+[32m0|KIRA-MD  | [39m  },
+[32m0|KIRA-MD  | [39m  indexInfo: {
+[32m0|KIRA-MD  | [39m    baseKey: <Buffer 05 d4 39 ba b8 07 21 d1 9b 5f 3b f4 12 d9 67 62 38 8a 56 ed f1 45 e9 c2 da 78 3b ea ff a9 58 30 41>,
+[32m0|KIRA-MD  | [39m    baseKeyType: 1,
+[32m0|KIRA-MD  | [39m    closed: 1779421584677,
+[32m0|KIRA-MD  | [39m    used: 1779421584076,
+[32m0|KIRA-MD  | [39m    created: 1779421584076,
+[32m0|KIRA-MD  | [39m    remoteIdentityKey: <Buffer 05 4e a8 0a 15 bf 72 c0 0a bd e8 19 ca 5a f1 87 be e0 b2 22 9a 4f 00 53 bd 01 a3 b8 e0 5b f1 a9 5e>
+[32m0|KIRA-MD  | [39m  },
+[32m0|KIRA-MD  | [39m  pendingPreKey: {
+[32m0|KIRA-MD  | [39m    signedKeyId: 7818383,
+[32m0|KIRA-MD  | [39m    baseKey: <Buffer 05 d4 39 ba b8 07 21 d1 9b 5f 3b f4 12 d9 67 62 38 8a 56 ed f1 45 e9 c2 da 78 3b ea ff a9 58 30 41>,
+[32m0|KIRA-MD  | [39m    preKeyId: 649975
+[32m0|KIRA-MD  | [39m  }
+[32m0|KIRA-MD  | [39m}
+[32m0|KIRA-MD  | [39m✅ Connection message sent with image
+[31m0|KIRA-MD  | [39mDecrypted message with closed session.
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] sender raw: 52450694291648@lid
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] sender normalized: 52450694291648
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] ownerList: [ '94764642432' ]
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] isOwner: false
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] sock.user.id: 94764642432:21@s.whatsapp.net
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] config.OWNER_NUMBER: 94764642432
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] config.DEV: 94764642432
+[32m0|KIRA-MD  | [39m🔍 Command: s from ʀᴀɴᴊᴀɴ ᴅɪʟꜱʜᴀɴ (52450694291648)
+[32m0|KIRA-MD  | [39m✅ Command executed: s
+[31m0|KIRA-MD  | [39mFailed to decrypt message with any known session...
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mFailed to decrypt message with any known session...
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mFailed to decrypt message with any known session...
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mFailed to decrypt message with any known session...
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[32m0|KIRA-MD  | [39mClosing session: SessionEntry {
+[32m0|KIRA-MD  | [39m  _chains: {
+[32m0|KIRA-MD  | [39m    'BWvLz1p8nGt6ex+thAq79VY8hf3osf0eU9vlQfTaZQkj': { chainKey: [Object], chainType: 2, messageKeys: {} },
+[32m0|KIRA-MD  | [39m    'BRYBxMsCOOjA/e2UJMvoVxl/zhGThTRQxgNOzJz4UrkD': { chainKey: [Object], chainType: 1, messageKeys: {} }
+[32m0|KIRA-MD  | [39m  },
+[32m0|KIRA-MD  | [39m  registrationId: 959102141,
+[32m0|KIRA-MD  | [39m  currentRatchet: {
+[32m0|KIRA-MD  | [39m    ephemeralKeyPair: {
+[32m0|KIRA-MD  | [39m      pubKey: <Buffer 05 16 01 c4 cb 02 38 e8 c0 fd ed 94 24 cb e8 57 19 7f ce 11 93 85 34 50 c6 03 4e cc 9c f8 52 b9 03>,
+[32m0|KIRA-MD  | [39m      privKey: <Buffer 18 e8 97 ed c8 b9 53 7c 39 cf f3 76 30 52 6d cb cd 7e a2 f4 e0 a6 b4 75 84 9e f5 09 3c 0c cc 6a>
+[32m0|KIRA-MD  | [39m    },
+[32m0|KIRA-MD  | [39m    lastRemoteEphemeralKey: <Buffer 05 6b cb cf 5a 7c 9c 6b 7a 7b 1f ad 84 0a bb f5 56 3c 85 fd e8 b1 fd 1e 53 db e5 41 f4 da 65 09 23>,
+[32m0|KIRA-MD  | [39m    previousCounter: 1,
+[32m0|KIRA-MD  | [39m    rootKey: <Buffer 9b 6d 06 bd 93 09 c9 98 ae e6 0e 93 44 b8 aa 7f c7 2a 4d ee 3b d0 8e 9e 10 37 6b 9f 40 c3 ca a3>
+[32m0|KIRA-MD  | [39m  },
+[32m0|KIRA-MD  | [39m  indexInfo: {
+[32m0|KIRA-MD  | [39m    baseKey: <Buffer 05 b6 90 c3 07 45 c0 ef f4 cd 5a b2 60 85 00 7a 21 d5 17 85 ec 05 23 cc 68 28 36 a5 fd 2c 2f 57 51>,
+[32m0|KIRA-MD  | [39m    baseKeyType: 1,
+[32m0|KIRA-MD  | [39m    closed: -1,
+[32m0|KIRA-MD  | [39m    used: 1779424578338,
+[32m0|KIRA-MD  | [39m    created: 1779424578338,
+[32m0|KIRA-MD  | [39m    remoteIdentityKey: <Buffer 05 4e a8 0a 15 bf 72 c0 0a bd e8 19 ca 5a f1 87 be e0 b2 22 9a 4f 00 53 bd 01 a3 b8 e0 5b f1 a9 5e>
+[32m0|KIRA-MD  | [39m  },
+[32m0|KIRA-MD  | [39m  pendingPreKey: {
+[32m0|KIRA-MD  | [39m    signedKeyId: 7818383,
+[32m0|KIRA-MD  | [39m    baseKey: <Buffer 05 b6 90 c3 07 45 c0 ef f4 cd 5a b2 60 85 00 7a 21 d5 17 85 ec 05 23 cc 68 28 36 a5 fd 2c 2f 57 51>,
+[32m0|KIRA-MD  | [39m    preKeyId: 650118
+[32m0|KIRA-MD  | [39m  }
+[32m0|KIRA-MD  | [39m}
+[32m0|KIRA-MD  | [39mRemoving old closed session: SessionEntry {
+[32m0|KIRA-MD  | [39m  _chains: {
+[32m0|KIRA-MD  | [39m    'BfS5PefRH2VAW4gnqL5qb+E4ic35hFAoi/ukT02nlzEE': { chainKey: [Object], chainType: 1, messageKeys: {} }
+[32m0|KIRA-MD  | [39m  },
+[32m0|KIRA-MD  | [39m  registrationId: 959102141,
+[32m0|KIRA-MD  | [39m  currentRatchet: {
+[32m0|KIRA-MD  | [39m    ephemeralKeyPair: {
+[32m0|KIRA-MD  | [39m      pubKey: <Buffer 05 f4 b9 3d e7 d1 1f 65 40 5b 88 27 a8 be 6a 6f e1 38 89 cd f9 84 50 28 8b fb a4 4f 4d a7 97 31 04>,
+[32m0|KIRA-MD  | [39m      privKey: <Buffer 48 e6 8f a9 45 2a ae e3 64 28 e5 8b 6c fc 91 df a9 7e 60 58 b4 a4 4e 99 f6 61 e5 07 64 e8 74 63>
+[32m0|KIRA-MD  | [39m    },
+[32m0|KIRA-MD  | [39m    lastRemoteEphemeralKey: <Buffer 05 6e 87 60 db c3 f4 ba 58 5d 05 97 53 9e a1 88 6d 11 79 b0 bb c0 9c cc f5 59 e1 01 a7 93 b4 89 46>,
+[32m0|KIRA-MD  | [39m    previousCounter: 0,
+[32m0|KIRA-MD  | [39m    rootKey: <Buffer 24 57 e9 e7 26 51 55 12 49 ad ba bb c7 8a 1e f4 1f 4c 65 d0 0d 24 b4 f8 7f 24 81 3d 2f 3a f4 c1>
+[32m0|KIRA-MD  | [39m  },
+[32m0|KIRA-MD  | [39m  indexInfo: {
+[32m0|KIRA-MD  | [39m    baseKey: <Buffer 05 57 a9 5c a8 ce a0 a5 a0 b3 e6 bc d3 ae 49 c3 9d 4c 4a 84 35 eb 79 2c 5e 53 44 d8 3b ff 5a a9 67>,
+[32m0|KIRA-MD  | [39m    baseKeyType: 1,
+[32m0|KIRA-MD  | [39m    closed: 1779421585282,
+[32m0|KIRA-MD  | [39m    used: 1779421584675,
+[32m0|KIRA-MD  | [39m    created: 1779421584675,
+[32m0|KIRA-MD  | [39m    remoteIdentityKey: <Buffer 05 4e a8 0a 15 bf 72 c0 0a bd e8 19 ca 5a f1 87 be e0 b2 22 9a 4f 00 53 bd 01 a3 b8 e0 5b f1 a9 5e>
+[32m0|KIRA-MD  | [39m  },
+[32m0|KIRA-MD  | [39m  pendingPreKey: {
+[32m0|KIRA-MD  | [39m    signedKeyId: 7818383,
+[32m0|KIRA-MD  | [39m    baseKey: <Buffer 05 57 a9 5c a8 ce a0 a5 a0 b3 e6 bc d3 ae 49 c3 9d 4c 4a 84 35 eb 79 2c 5e 53 44 d8 3b ff 5a a9 67>,
+[32m0|KIRA-MD  | [39m    preKeyId: 649969
+[32m0|KIRA-MD  | [39m  }
+[32m0|KIRA-MD  | [39m}
+[31m0|KIRA-MD  | [39mFailed to decrypt message with any known session...
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mSession error:Error: Bad MAC Error: Bad MAC
+[31m0|KIRA-MD  | [39m    at Object.verifyMAC (/workspaces/new/node_modules/libsignal/src/crypto.js:87:15)
+[31m0|KIRA-MD  | [39m    at SessionCipher.doDecryptWhisperMessage (/workspaces/new/node_modules/libsignal/src/session_cipher.js:250:16)
+[31m0|KIRA-MD  | [39m    at async SessionCipher.decryptWithSessions (/workspaces/new/node_modules/libsignal/src/session_cipher.js:147:29)
+[31m0|KIRA-MD  | [39m    at async 52450694291648_1.0 [as awaitable] (/workspaces/new/node_modules/libsignal/src/session_cipher.js:171:28)
+[31m0|KIRA-MD  | [39m    at async _asyncQueueExecutor (/workspaces/new/node_modules/libsignal/src/queue_job.js:20:29)
+[31m0|KIRA-MD  | [39mClosing open session in favor of incoming prekey bundle
+[32m0|KIRA-MD  | [39mClosing session: SessionEntry {
+[32m0|KIRA-MD  | [39m  _chains: {
+[32m0|KIRA-MD  | [39m    BZSuRNsLDHRDxCQjwUlTLTHQMWwPJsop3PfLYK6bsW5c: { chainKey: [Object], chainType: 2, messageKeys: {} },
+[32m0|KIRA-MD  | [39m    'BTxekSscaXa2jULKsuGnpdGdbCq/Z65+f9xgGrLydmA3': { chainKey: [Object], chainType: 1, messageKeys: {} }
+[32m0|KIRA-MD  | [39m  },
+[32m0|KIRA-MD  | [39m  registrationId: 1865570492,
+[32m0|KIRA-MD  | [39m  currentRatchet: {
+[32m0|KIRA-MD  | [39m    ephemeralKeyPair: {
+[32m0|KIRA-MD  | [39m      pubKey: <Buffer 05 3c 5e 91 2b 1c 69 76 b6 8d 42 ca b2 e1 a7 a5 d1 9d 6c 2a bf 67 ae 7e 7f dc 60 1a b2 f2 76 60 37>,
+[32m0|KIRA-MD  | [39m      privKey: <Buffer 70 56 71 13 3a 55 15 a0 0e 2c e5 56 fe 75 88 77 78 64 98 31 ef f3 17 c1 96 9f cc 55 da a0 d2 5d>
+[32m0|KIRA-MD  | [39m    },
+[32m0|KIRA-MD  | [39m    lastRemoteEphemeralKey: <Buffer 05 94 ae 44 db 0b 0c 74 43 c4 24 23 c1 49 53 2d 31 d0 31 6c 0f 26 ca 29 dc f7 cb 60 ae 9b b1 6e 5c>,
+[32m0|KIRA-MD  | [39m    previousCounter: 0,
+[32m0|KIRA-MD  | [39m    rootKey: <Buffer 97 28 cb 8f b5 bd 7e d7 2a cb 09 9d 5b 70 78 57 0f 4e 13 a8 82 dd 12 cc 38 ef f1 12 ca a7 46 49>
+[32m0|KIRA-MD  | [39m  },
+[32m0|KIRA-MD  | [39m  indexInfo: {
+[32m0|KIRA-MD  | [39m    baseKey: <Buffer 05 39 d4 60 b3 33 44 57 c8 dd e4 07 9f 99 66 c6 f4 2f ae f9 9b ff 5d 7c 1d 0c 26 b9 18 e5 13 97 34>,
+[32m0|KIRA-MD  | [39m    baseKeyType: 2,
+[32m0|KIRA-MD  | [39m    closed: -1,
+[32m0|KIRA-MD  | [39m    used: 1779424638450,
+[32m0|KIRA-MD  | [39m    created: 1779424638450,
+[32m0|KIRA-MD  | [39m    remoteIdentityKey: <Buffer 05 73 d6 7f b6 84 ac 0b 94 ca 65 d5 73 87 78 b1 24 a3 98 1a 1d 1d 26 53 ee 05 b7 b1 eb 8c 3d 06 7b>
+[32m0|KIRA-MD  | [39m  }
+[32m0|KIRA-MD  | [39m}
+[31m0|KIRA-MD  | [39mClosing open session in favor of incoming prekey bundle
+[32m0|KIRA-MD  | [39mClosing session: SessionEntry {
+[32m0|KIRA-MD  | [39m  _chains: {
+[32m0|KIRA-MD  | [39m    'BTfJUKT+Y7UF1LXvlKqIxJQ0TP7USDBe/69QStWzlMMx': { chainKey: [Object], chainType: 2, messageKeys: {} },
+[32m0|KIRA-MD  | [39m    Bfip2kUWVwC0SVgeFibmsJCd9mjjfKhXR984FLtEuWZe: { chainKey: [Object], chainType: 1, messageKeys: {} }
+[32m0|KIRA-MD  | [39m  },
+[32m0|KIRA-MD  | [39m  registrationId: 959102141,
+[32m0|KIRA-MD  | [39m  currentRatchet: {
+[32m0|KIRA-MD  | [39m    ephemeralKeyPair: {
+[32m0|KIRA-MD  | [39m      pubKey: <Buffer 05 f8 a9 da 45 16 57 00 b4 49 58 1e 16 26 e6 b0 90 9d f6 68 e3 7c a8 57 47 df 38 14 bb 44 b9 66 5e>,
+[32m0|KIRA-MD  | [39m      privKey: <Buffer 20 cc 71 c0 dd 07 45 bc a1 04 41 95 83 c1 91 6e c7 5a 93 6b 68 67 a0 f9 d7 6d 71 d6 49 45 f1 6d>
+[32m0|KIRA-MD  | [39m    },
+[32m0|KIRA-MD  | [39m    lastRemoteEphemeralKey: <Buffer 05 37 c9 50 a4 fe 63 b5 05 d4 b5 ef 94 aa 88 c4 94 34 4c fe d4 48 30 5e ff af 50 4a d5 b3 94 c3 31>,
+[32m0|KIRA-MD  | [39m    previousCounter: 0,
+[32m0|KIRA-MD  | [39m    rootKey: <Buffer c4 95 c8 94 e2 07 3d f1 bc 04 f2 02 2b 11 11 cf 1e 7f 24 0a c7 37 11 0c 2c 1c 59 89 5c e8 9d 03>
+[32m0|KIRA-MD  | [39m  },
+[32m0|KIRA-MD  | [39m  indexInfo: {
+[32m0|KIRA-MD  | [39m    baseKey: <Buffer 05 a1 92 52 c5 d9 92 38 ed 65 30 4f e1 94 f1 03 0e 68 46 fd 6c c5 6a 61 1a cf b9 da 87 85 db 09 6c>,
+[32m0|KIRA-MD  | [39m    baseKeyType: 2,
+[32m0|KIRA-MD  | [39m    closed: -1,
+[32m0|KIRA-MD  | [39m    used: 1779424639224,
+[32m0|KIRA-MD  | [39m    created: 1779424639224,
+[32m0|KIRA-MD  | [39m    remoteIdentityKey: <Buffer 05 4e a8 0a 15 bf 72 c0 0a bd e8 19 ca 5a f1 87 be e0 b2 22 9a 4f 00 53 bd 01 a3 b8 e0 5b f1 a9 5e>
+[32m0|KIRA-MD  | [39m  }
+[32m0|KIRA-MD  | [39m}
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] sender raw: 52450694291648@lid
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] sender normalized: 52450694291648
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] ownerList: [ '94764642432' ]
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] isOwner: false
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] sock.user.id: 94764642432:21@s.whatsapp.net
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] config.OWNER_NUMBER: 94764642432
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] config.DEV: 94764642432
+[32m0|KIRA-MD  | [39m🔍 Command: ping from ʀᴀɴᴊᴀɴ ᴅɪʟꜱʜᴀɴ (52450694291648)
+[31m0|KIRA-MD  | [39mClosing open session in favor of incoming prekey bundle
+[32m0|KIRA-MD  | [39mClosing session: SessionEntry {
+[32m0|KIRA-MD  | [39m  _chains: {
+[32m0|KIRA-MD  | [39m    'BRfP++dFLnvEsiFGNNAVgCp+fPBDN/1U5+BidL7lSYFz': { chainKey: [Object], chainType: 2, messageKeys: {} },
+[32m0|KIRA-MD  | [39m    BSNm5ba6AUHQzjqMMV6ArtB4bybckbqOi3cqzvwG2hpf: { chainKey: [Object], chainType: 1, messageKeys: {} }
+[32m0|KIRA-MD  | [39m  },
+[32m0|KIRA-MD  | [39m  registrationId: 959102141,
+[32m0|KIRA-MD  | [39m  currentRatchet: {
+[32m0|KIRA-MD  | [39m    ephemeralKeyPair: {
+[32m0|KIRA-MD  | [39m      pubKey: <Buffer 05 23 66 e5 b6 ba 01 41 d0 ce 3a 8c 31 5e 80 ae d0 78 6f 26 dc 91 ba 8e 8b 77 2a ce fc 06 da 1a 5f>,
+[32m0|KIRA-MD  | [39m      privKey: <Buffer 50 a9 fe 58 c7 24 1a ae 7e e1 d6 92 33 90 f1 54 2a b6 11 98 cb 6a 21 64 77 87 45 3c 33 06 90 6a>
+[32m0|KIRA-MD  | [39m    },
+[32m0|KIRA-MD  | [39m    lastRemoteEphemeralKey: <Buffer 05 17 cf fb e7 45 2e 7b c4 b2 21 46 34 d0 15 80 2a 7e 7c f0 43 37 fd 54 e7 e0 62 74 be e5 49 81 73>,
+[32m0|KIRA-MD  | [39m    previousCounter: 0,
+[32m0|KIRA-MD  | [39m    rootKey: <Buffer d5 a1 4c 3c 1d 4b 0a 77 53 ed e8 78 e7 4c 7a 63 2d 69 cc 06 e8 d1 e4 8f 91 dc 2f dc c5 63 55 09>
+[32m0|KIRA-MD  | [39m  },
+[32m0|KIRA-MD  | [39m  indexInfo: {
+[32m0|KIRA-MD  | [39m    baseKey: <Buffer 05 e9 4b 5f f4 be a0 5d ad 8a 90 a6 66 54 74 7b b9 b5 a3 19 ef 17 0a e6 d6 14 8f d4 96 78 53 38 3c>,
+[32m0|KIRA-MD  | [39m    baseKeyType: 2,
+[32m0|KIRA-MD  | [39m    closed: -1,
+[32m0|KIRA-MD  | [39m    used: 1779424639545,
+[32m0|KIRA-MD  | [39m    created: 1779424639545,
+[32m0|KIRA-MD  | [39m    remoteIdentityKey: <Buffer 05 4e a8 0a 15 bf 72 c0 0a bd e8 19 ca 5a f1 87 be e0 b2 22 9a 4f 00 53 bd 01 a3 b8 e0 5b f1 a9 5e>
+[32m0|KIRA-MD  | [39m  }
+[32m0|KIRA-MD  | [39m}
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] sender raw: 52450694291648@lid
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] sender normalized: 52450694291648
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] ownerList: [ '94764642432' ]
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] isOwner: false
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] sock.user.id: 94764642432:21@s.whatsapp.net
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] config.OWNER_NUMBER: 94764642432
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] config.DEV: 94764642432
+[32m0|KIRA-MD  | [39m🔍 Command: ping from ʀᴀɴᴊᴀɴ ᴅɪʟꜱʜᴀɴ (52450694291648)
+[32m0|KIRA-MD  | [39m✅ Command executed: ping
+[32m0|KIRA-MD  | [39m✅ Command executed: ping
+[31m0|KIRA-MD  | [39mClosing open session in favor of incoming prekey bundle
+[32m0|KIRA-MD  | [39mClosing session: SessionEntry {
+[32m0|KIRA-MD  | [39m  _chains: {
+[32m0|KIRA-MD  | [39m    'BUCqtRE8rKeJSovvTzhIIIHnNYUsMPfm+eURyqaY+5Ra': { chainKey: [Object], chainType: 2, messageKeys: {} },
+[32m0|KIRA-MD  | [39m    BYe7tFFkRanr7v3NNk1xTNPJf8j7L99CLFYQZJ5Bouo0: { chainKey: [Object], chainType: 1, messageKeys: {} }
+[32m0|KIRA-MD  | [39m  },
+[32m0|KIRA-MD  | [39m  registrationId: 959102141,
+[32m0|KIRA-MD  | [39m  currentRatchet: {
+[32m0|KIRA-MD  | [39m    ephemeralKeyPair: {
+[32m0|KIRA-MD  | [39m      pubKey: <Buffer 05 87 bb b4 51 64 45 a9 eb ee fd cd 36 4d 71 4c d3 c9 7f c8 fb 2f df 42 2c 56 10 64 9e 41 a2 ea 34>,
+[32m0|KIRA-MD  | [39m      privKey: <Buffer 38 b0 a1 c3 90 61 49 5b a4 6c 45 7c 8f 28 f0 00 45 0e a2 da 95 a4 a7 f0 39 12 c3 2f 57 4a 5b 49>
+[32m0|KIRA-MD  | [39m    },
+[32m0|KIRA-MD  | [39m    lastRemoteEphemeralKey: <Buffer 05 40 aa b5 11 3c ac a7 89 4a 8b ef 4f 38 48 20 81 e7 35 85 2c 30 f7 e6 f9 e5 11 ca a6 98 fb 94 5a>,
+[32m0|KIRA-MD  | [39m    previousCounter: 0,
+[32m0|KIRA-MD  | [39m    rootKey: <Buffer a8 58 e4 07 ad 1b d8 9a f6 11 7d 99 60 8f f3 2f 37 fc bd 12 2c 0c e6 27 f2 c5 c3 ff f6 09 23 aa>
+[32m0|KIRA-MD  | [39m  },
+[32m0|KIRA-MD  | [39m  indexInfo: {
+[32m0|KIRA-MD  | [39m    baseKey: <Buffer 05 84 66 f1 5b 83 7c 8b ea b8 81 6b ba f9 93 b6 d9 b6 c0 02 3c 8a a5 ec 3a ff 0b 10 8c 0b 56 fc 1c>,
+[32m0|KIRA-MD  | [39m    baseKeyType: 2,
+[32m0|KIRA-MD  | [39m    closed: -1,
+[32m0|KIRA-MD  | [39m    used: 1779424639551,
+[32m0|KIRA-MD  | [39m    created: 1779424639551,
+[32m0|KIRA-MD  | [39m    remoteIdentityKey: <Buffer 05 4e a8 0a 15 bf 72 c0 0a bd e8 19 ca 5a f1 87 be e0 b2 22 9a 4f 00 53 bd 01 a3 b8 e0 5b f1 a9 5e>
+[32m0|KIRA-MD  | [39m  }
+[32m0|KIRA-MD  | [39m}
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] sender raw: 52450694291648@lid
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] sender normalized: 52450694291648
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] ownerList: [ '94764642432' ]
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] isOwner: false
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] sock.user.id: 94764642432:21@s.whatsapp.net
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] config.OWNER_NUMBER: 94764642432
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] config.DEV: 94764642432
+[32m0|KIRA-MD  | [39m🔍 Command: ping from ʀᴀɴᴊᴀɴ ᴅɪʟꜱʜᴀɴ (52450694291648)
+[32m0|KIRA-MD  | [39m✅ Command executed: ping
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] sender raw: 52450694291648@lid
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] sender normalized: 52450694291648
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] ownerList: [ '94764642432' ]
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] isOwner: false
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] sock.user.id: 94764642432:21@s.whatsapp.net
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] config.OWNER_NUMBER: 94764642432
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] config.DEV: 94764642432
+[32m0|KIRA-MD  | [39m🔍 Command: ping from 52450694291648 (52450694291648)
+[32m0|KIRA-MD  | [39m✅ Command executed: ping
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] sender raw: 52450694291648@lid
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] sender normalized: 52450694291648
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] ownerList: [ '94764642432' ]
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] isOwner: false
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] sock.user.id: 94764642432:21@s.whatsapp.net
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] config.OWNER_NUMBER: 94764642432
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] config.DEV: 94764642432
+[32m0|KIRA-MD  | [39m🔍 Command: ping from 52450694291648 (52450694291648)
+[32m0|KIRA-MD  | [39m✅ Command executed: ping
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] sender raw: 52450694291648@lid
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] sender normalized: 52450694291648
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] ownerList: [ '94764642432' ]
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] isOwner: false
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] sock.user.id: 94764642432:21@s.whatsapp.net
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] config.OWNER_NUMBER: 94764642432
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] config.DEV: 94764642432
+[32m0|KIRA-MD  | [39m🔍 Command: ping from 52450694291648 (52450694291648)
+[32m0|KIRA-MD  | [39m✅ Command executed: ping
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] sender raw: 52450694291648@lid
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] sender normalized: 52450694291648
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] ownerList: [ '94764642432' ]
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] isOwner: false
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] sock.user.id: 94764642432:21@s.whatsapp.net
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] config.OWNER_NUMBER: 94764642432
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] config.DEV: 94764642432
+[32m0|KIRA-MD  | [39m🔍 Command: ping from 52450694291648 (52450694291648)
+[32m0|KIRA-MD  | [39m✅ Command executed: ping
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] sender raw: 52450694291648@lid
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] sender normalized: 52450694291648
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] ownerList: [ '94764642432' ]
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] isOwner: false
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] sock.user.id: 94764642432:21@s.whatsapp.net
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] config.OWNER_NUMBER: 94764642432
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] config.DEV: 94764642432
+[32m0|KIRA-MD  | [39m🔍 Command: s from ʀᴀɴᴊᴀɴ ᴅɪʟꜱʜᴀɴ (52450694291648)
+[32m0|KIRA-MD  | [39m✅ Command executed: s
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] sender raw: 52450694291648@lid
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] sender normalized: 52450694291648
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] ownerList: [ '94764642432' ]
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] isOwner: false
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] sock.user.id: 94764642432:21@s.whatsapp.net
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] config.OWNER_NUMBER: 94764642432
+[32m0|KIRA-MD  | [39m🔍 [OWNER-DEBUG] config.DEV: 94764642432
+[32m0|KIRA-MD  | [39m🔍 Command: s from ʀᴀɴᴊᴀɴ ᴅɪʟꜱʜᴀɴ (52450694291648)
+[32m0|KIRA-MD  | [39m✅ Command executed: s
+[31m0|KIRA-MD  | [39m❌ Goodbye message error: TypeError [ERR_INVALID_ARG_TYPE]: The "string" argument must be of type string or an instance of Buffer or ArrayBuffer. Received an instance of Object
+[31m0|KIRA-MD  | [39m    at Buffer.byteLength (node:buffer:804:11)
+[31m0|KIRA-MD  | [39m    at BufferWriter.write_string_buffer [as string] (/workspaces/new/node_modules/protobufjs/src/writer_buffer.js:70:27)
+[31m0|KIRA-MD  | [39m    at ContextInfo.encode (file:///workspaces/new/node_modules/@whiskeysockets/baileys/WAProto/index.js:20866:35)
+[31m0|KIRA-MD  | [39m    at ExtendedTextMessage.encode (file:///workspaces/new/node_modules/@whiskeysockets/baileys/WAProto/index.js:43757:45)
+[31m0|KIRA-MD  | [39m    at Message.encode (file:///workspaces/new/node_modules/@whiskeysockets/baileys/WAProto/index.js:36114:57)
+[31m0|KIRA-MD  | [39m    at encodeWAMessage (file:///workspaces/new/node_modules/@whiskeysockets/baileys/lib/Utils/generics.js:56:79)
+[31m0|KIRA-MD  | [39m    at file:///workspaces/new/node_modules/@whiskeysockets/baileys/lib/Socket/messages-send.js:515:31
+[31m0|KIRA-MD  | [39m    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[31m0|KIRA-MD  | [39m    at async file:///workspaces/new/node_modules/@whiskeysockets/baileys/lib/Utils/auth-utils.js:220:36 {
+[31m0|KIRA-MD  | [39m  code: 'ERR_INVALID_ARG_TYPE'
+[31m0|KIRA-MD  | [39m}
