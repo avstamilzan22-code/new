@@ -2,6 +2,7 @@ const { cmd, commands } = require('../lib/command');
 const os = require('os')
 const fs = require('fs')
 const bot = require('../lib/bot')
+const settings = require('../lib/settings')
 //===============================User======================================
 cmd({
     pattern: "user info",
@@ -620,7 +621,7 @@ cmd({
         if (response.length === 0) {
             return reply("No participants are in the waiting list.");
         }
-        const toAddUsers = response.filter(user => user.jid.startsWith(config.AUTO_ADD_Country_Code));
+        const toAddUsers = response.filter(user => user.jid.startsWith(settings.get('AUTO_ADD_Country_Code')));
 
         if (toAddUsers.length === 0) {
             return reply("No +92 users found in the waiting list.");

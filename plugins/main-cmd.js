@@ -7,6 +7,7 @@ const axios = require('axios');
 const { fakevCard } = require('../lib/fakevCard');
 const bot = require('../lib/bot')
 const config = require('../setting')
+const settings = require('../lib/settings')
 const { normalizeNumber, isOwner: checkOwner, getOwnerList } = require('../lib/owner')
 //========================================About==================================================
 cmd({
@@ -134,7 +135,7 @@ cmd({
     on: "body"
   },  
  async (conn, mek, m, { from, isOwner, reply }) => {
-    if (config.AUTO_BIO === 'true') {
+    if (settings.get('AUTO_BIO') === 'true') {
         startAutoBio(conn);
     } 
 });
@@ -172,19 +173,19 @@ async (conn, mek, m, { from, contextInfo, reply }) => {
 ┃▸└───────────···๏
 ╰────────────────┈⊷
 ╭━━〔 *Enabled Disabled* 〕━━┈⊷
-┇๏ *Status View:* ${isEnabled(config.AUTO_READ_STATUS) ? "Enabled ✅" : "Disabled ❌"}
-┇๏ *Status Reply:* ${isEnabled(config.AUTO_STATUS_REPLY) ? "Enabled ✅" : "Disabled ❌"}
-┇๏ *Auto Reply:* ${isEnabled(config.AUTO_REPLY) ? "Enabled ✅" : "Disabled ❌"}
-┇๏ *Auto Sticker:* ${isEnabled(config.AUTO_STICKER) ? "Enabled ✅" : "Disabled ❌"}
-┇๏ *Auto Voice:* ${isEnabled(config.AUTO_VOICE) ? "Enabled ✅" : "Disabled ❌"}
-┇๏ *Auto React:* ${isEnabled(config.AUTO_REACT) ? "Enabled ✅" : "Disabled ❌"}
-┇๏ *Anti-Link:* ${isEnabled(config.ANTI_LINK) ? "Enabled ✅" : "Disabled ❌"}
-┇๏ *Anti-Bad Words:* ${isEnabled(config.ANTI_BAD) ? "Enabled ✅" : "Disabled ❌"}
-┇๏ *Auto Typing:* ${isEnabled(config.AUTO_TYPING) ? "Enabled ✅" : "Disabled ❌"}
-┇๏ *Auto Recording:* ${isEnabled(config.AUTO_RECORDING) ? "Enabled ✅" : "Disabled ❌"}
-┇๏ *Always Online:* ${isEnabled(config.ALWAYS_ONLINE) ? "Enabled ✅" : "Disabled ❌"}
-┇๏ *Public Mode:* ${isEnabled(config.PUBLIC_MODE) ? "Enabled ✅" : "Disabled ❌"}
-┇๏ *Read Message:* ${isEnabled(config.READ_CMD) ? "Enabled ✅" : "Disabled ❌"}
+┇๏ *Status View:* ${isEnabled(settings.get('AUTO_READ_STATUS')) ? "Enabled ✅" : "Disabled ❌"}
+┇๏ *Status Reply:* ${isEnabled(settings.get('AUTO_STATUS_REPLY')) ? "Enabled ✅" : "Disabled ❌"}
+┇๏ *Auto Reply:* ${isEnabled(settings.get('AUTO_REPLY')) ? "Enabled ✅" : "Disabled ❌"}
+┇๏ *Auto Sticker:* ${isEnabled(settings.get('AUTO_STICKER')) ? "Enabled ✅" : "Disabled ❌"}
+┇๏ *Auto Voice:* ${isEnabled(settings.get('AUTO_VOICE')) ? "Enabled ✅" : "Disabled ❌"}
+┇๏ *Auto React:* ${isEnabled(settings.get('AUTO_REACT')) ? "Enabled ✅" : "Disabled ❌"}
+┇๏ *Anti-Link:* ${isEnabled(settings.get('ANTI_LINK')) ? "Enabled ✅" : "Disabled ❌"}
+┇๏ *Anti-Bad Words:* ${isEnabled(settings.get('ANTI_BAD')) ? "Enabled ✅" : "Disabled ❌"}
+┇๏ *Auto Typing:* ${isEnabled(settings.get('AUTO_TYPING')) ? "Enabled ✅" : "Disabled ❌"}
+┇๏ *Auto Recording:* ${isEnabled(settings.get('AUTO_RECORDING')) ? "Enabled ✅" : "Disabled ❌"}
+┇๏ *Always Online:* ${isEnabled(settings.get('ALWAYS_ONLINE')) ? "Enabled ✅" : "Disabled ❌"}
+┇๏ *Public Mode:* ${isEnabled(settings.get('PUBLIC_MODE')) ? "Enabled ✅" : "Disabled ❌"}
+┇๏ *Read Message:* ${isEnabled(settings.get('READ_CMD')) ? "Enabled ✅" : "Disabled ❌"}
 ╰━━━━━━━━━━━━──┈⊷
 > ${bot.DESCRIPTION}`;
 
@@ -642,22 +643,21 @@ cmd({
     category: "main",
     filename: __filename
 }, 
-async (conn, mek, m, { from }) => {
+async (conn, mek, m, { from, pushname, reply }) => {
     try {
-        // Owner's contact info
-        const ownerNumber = '+94764642432'; // Replace this with the actual owner number
-        const ownerName = 'LOVELY'; // Replace this with the owner's name
-        const organization = 'LOVELY MD'; // Optional: replace with the owner's organization
+        const ownerList = getOwnerList(conn.user?.id);
+        const ownerNum = ownerList[0] || '94764642432';
+        const ownerNumber = '+' + ownerNum;
+        const ownerName = pushname || 'SHITSU-MD Owner';
+        const organization = 'SHITSU-MD';
 
-        // Create a vCard (contact card) for the owner
         const vcard = 'BEGIN:VCARD\n' +
                       'VERSION:3.0\n' +
-                      `FN:${ownerName}\n` +  // Full Name
-                      `ORG:${organization};\n` +  // Organization (Optional)
-                      `TEL;type=CELL;type=VOICE;waid=${ownerNumber.replace('+', '')}:${ownerNumber}\n` +  // WhatsApp ID and number
+                      `FN:${ownerName}\n` +
+                      `ORG:${organization};\n` +
+                      `TEL;type=CELL;type=VOICE;waid=${ownerNum}:${ownerNumber}\n` +
                       'END:VCARD';
 
-        // Send the vCard first
         const sentVCard = await conn.sendMessage(from, {
             contacts: {
                 displayName: ownerName,
@@ -665,12 +665,11 @@ async (conn, mek, m, { from }) => {
             }
         });
 
-        // Send a reply message that references the vCard
         await conn.sendMessage(from, {
             text: `*This is the owner's contact:* ${ownerName}`,
             contextInfo: {
-                mentionedJid: [ownerNumber.replace('+94764642432', '') + '+94764642432@s.whatsapp.net'], // Mention the owner
-                quotedMessageId: sentVCard.key.id // Reference the vCard message
+                mentionedJid: [ownerNum + '@s.whatsapp.net'],
+                quotedMessageId: sentVCard.key.id
             }
         }, { quoted: mek });
 
@@ -809,7 +808,7 @@ cmd({
   on: "body"
 },    
 async (conn, mek, m, { from, body, isOwner }) => {       
- if (config.AUTO_RECORDING === 'true') {
+ if (settings.get('AUTO_RECORDING') === 'true') {
                 await conn.sendPresenceUpdate('recording', from);
             }
          } 
@@ -826,7 +825,7 @@ async (conn, mek, m, { from, body, isOwner }) => {
     let { data } = await axios.get(url)
     for (const text in data) {
         if (body.toLowerCase() === text.toLowerCase()) {
-            if (config.AUTO_VOICE === 'true') {
+            if (settings.get('AUTO_VOICE') === 'true') {
                 if (isOwner) return;        
                 await conn.sendPresenceUpdate('recording', from);
                 await conn.sendMessage(from, { audio: { url: data[text] }, mimetype: 'audio/mpeg', ptt: true }, { quoted: mek });
@@ -844,7 +843,7 @@ async (conn, mek, m, { from, body, isOwner }) => {
     let { data } = await axios.get(url)
     for (const text in data) {
         if (body.toLowerCase() === text.toLowerCase()) {
-            if (config.AUTO_REPLY === 'true') {
+            if (settings.get('AUTO_REPLY') === 'true') {
                 if (isOwner) return;        
                 await m.reply(data[text])
             
@@ -857,7 +856,7 @@ cmd({
     on: "body"
 },    
 async (conn, mek, m, { from, body, isOwner }) => {
-    if (config.AUTO_TYPING === 'true') {
+    if (settings.get('AUTO_TYPING') === 'true') {
         await conn.sendPresenceUpdate('composing', from); // send typing 
     }
 });
@@ -866,7 +865,7 @@ cmd({
   on: "body"
 }, async (conn, mek, m, { from, isOwner }) => {
   try {
-    if (config.ALWAYS_ONLINE === "true") {
+    if (settings.get('ALWAYS_ONLINE') === "true") {
       // Always Online Mode: Bot always appears online (double tick)
       await conn.sendPresenceUpdate("available", from);
     } else {
@@ -889,10 +888,10 @@ cmd({
   on: "body"
 }, async (conn, mek, m, { from, isOwner }) => {
   try {
-    if (config.ALWAYS_ONLINE === "true") {
+    if (settings.get('ALWAYS_ONLINE') === "true") {
       // Public Mode + Always Online: Always show as online
       await conn.sendPresenceUpdate("available", from);
-    } else if (config.PUBLIC_MODE === "true") {
+    } else if (settings.get('PUBLIC_MODE') === "true") {
       // Public Mode + Dynamic: Respect owner's presence
       if (isOwner) {
         // If owner is online, show available
@@ -917,10 +916,11 @@ cmd({
 
 async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
+let ownerNum = getOwnerList(conn.user?.id)[0] || bot.OWNER_NUMBER || 'Unknown';
 let dec = `> SHITSU-MD REPO INFO 🪀
 
 ╭⦁⦂⦁*━┉━┉━┉━┉━┉━┉━⦁⦂⦁
-┃ 𝙾𝚆𝙽𝙴𝚁 𝙽𝚄𝙼𝙱𝙴𝚁: ${bot.OWNER_NUMBER}
+┃ 𝙾𝚆𝙽𝙴𝚁 𝙽𝚄𝙼𝙱𝙴𝚁: ${ownerNum}
 ┃ 
 ┃ SHITSU-MD REPO: ${bot.REPO_LINK} 
 ┃
@@ -941,7 +941,7 @@ console.log(`♻ Repo Command Used : ${from}`);
 cmd({
     pattern: "settings",
     alias: ["setting","s"],
-    desc: "Check bot online or not.",
+    desc: "Bot settings menu (owner only)",
     category: "main",
     filename: __filename
 }, 
@@ -950,150 +950,122 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         isOwner = checkOwner(sender, conn.user);
         if (!isOwner) return reply("❌ You must be the bot owner to use this command.");
 
-        let work;
-        switch (config.MODE) {
-            case 'public':
-                work = '𝙿𝚄𝙱𝙻𝙸𝙲🌎';
-                break;
-            case 'private':
-                work = '𝙿𝚁𝙸𝚅𝙰𝚃𝙴👤';
-                break;
-            case 'groups':
-                work = '𝙶𝚁𝙾𝚄𝙿 𝙾𝙽𝙻𝚈👥';
-                break;
-            case 'inbox':
-                work = '𝙸𝙽𝙱𝙾𝚇 𝙾𝙽𝙻𝚈🫂';
-                break;
-            default:
-                work = '𝚄𝙽𝙺𝙾𝚆𝙽🛑';
+        function s(key) { return settings.get(key) === 'true' ? 'ON ✅' : 'OFF ❌'; }
+        function modeLabel() {
+            switch (settings.get('MODE')) {
+                case 'private': return 'PRIVATE 👤';
+                case 'groups': return 'GROUPS ONLY 👥';
+                case 'inbox': return 'INBOX ONLY 🫂';
+                default: return 'PUBLIC 🌎';
+            }
+        }
+        function delType() {
+            switch (settings.get('ANTI_DELETE_TYPE')) {
+                case 'same': return 'Same Chat';
+                case 'inbox': return 'Inbox';
+                case 'both': return 'Both';
+                default: return 'Same Chat';
+            }
         }
 
-        let autoStatus = config.AUTO_READ_STATUS === 'true' ? '♻️ 𝙾𝙽' : '🚫 𝙾𝙵𝙵';
-        let autoreact = config.AUTO_REACT === 'true' ? '♻️ 𝙾𝙽' : '🚫 𝙾𝙵𝙵';
+        const menu = `
+╭──❍ *SETTINGS* ❍──╮
+│
+├─❍ *Mode:* ${modeLabel()}
+│
+├─❍ 1. Work Mode
+├─❍ 2. Anti-Delete: ${s('ANTI_DELETE')} [${delType()}]
+├─❍ 3. Anti-Edit: ${s('ANTI_EDIT')}
+├─❍ 4. Anti-Link: ${s('ANTI_LINK')}
+├─❍ 5. Anti-Bad: ${s('ANTI_BAD')}
+├─❍ 6. Anti-Call: ${s('ANTI_CALL')}
+├─❍ 7. Anti-VV: ${s('ANTI_VV')}
+├─❍ 8. Anti-Bot: ${s('ANTI_BOT')}
+├─❍ 9. Auto-Read: ${s('READ_MESSAGE')}
+├─❍ 10. Auto-React: ${s('AUTO_REACT')}
+├─❍ 11. Auto-Typing: ${s('AUTO_TYPING')}
+├─❍ 12. Auto-Recording: ${s('AUTO_RECORDING')}
+├─❍ 13. Always Online: ${s('ALWAYS_ONLINE')}
+├─❍ 14. Auto-Bio: ${s('AUTO_BIO')}
+├─❍ 15. Auto-Status Seen: ${s('AUTO_STATUS_SEEN')}
+├─❍ 16. Auto-Status Reply: ${s('AUTO_STATUS_REPLY')}
+├─❍ 17. Auto-Voice: ${s('AUTO_VOICE')}
+├─❍ 18. Auto-Sticker: ${s('AUTO_STICKER')}
+├─❍ 19. Auto-Reply: ${s('AUTO_REPLY')}
+├─❍ 20. Read Cmd: ${s('READ_CMD')}
+├─❍ 21. Delete Links: ${s('DELETE_LINKS')}
+├─❍ 22. Admin Events: ${s('ADMIN_EVENTS')}
+├─❍ 23. Public Mode: ${s('PUBLIC_MODE')}
+├─❍ 24. Auto-Block: ${s('AUTO_BLOCK')}
+│
+╰──────────────────────❍
+
+> Reply with number to toggle
+> For mode: 1a=public 1b=private 1c=group 1d=inbox
+> For anti-delete type: 2a=same 2b=inbox 2c=both`;
 
         const vv = await conn.sendMessage(from, {
-            image: { url:bot.ALIVE_IMG},
-            caption: `> SHITSU-MD Settings\n
-┏━━━━━━━━━━━━━━━━━━┓
-┃╭┈────────━━━━───╮
-┣┣Work Mode : *${work}*
-┣┣Auto Status : *${autoStatus}*
-┣┣Auto React : *${autoreact}*
-┃┗━━━━━━━━━━━━━━━┛
-┗━━━━━━━━━━━━━━━━━━┛
-> 🔗𝘾𝙐𝙎𝙏𝙊𝙈𝙄𝙕𝙀  𝙎𝙀𝙏𝙏𝙄𝙉𝙂𝗦🔗⤵️
-
-┏━━━━━━━━━━━━━━━━━━┓
-┃╭┈────────━━━━───╮
-
-*_WORK TYPE_⤵️*
-┣┣1.1 PUBLIC WORK
-┣┣1.2 PRIVATE WORK
-┣┣1.3 GROUP ONLY
-┣┣1.4 INBOX ONLY
-
-*_AUTO STATUS SEEN_⤵️*
-┣┣3.1 AUTO READ STATUS ON
-┣┣3.2 AUTO READ STATUS OFF
-
-*_AUTO REACT_⤵️*
-┣┣4.1 AUTO REACT ON
-┣┣4.2 AUTO REACT OFF
-
-*_AUTO_TYPING_⤵️*
-┣┣6.1 AUTO_TYPING ON
-┣┣5.2 AUTO_TYPING OFF
-
-*_AUTO BIO_⤵️*
-┣┣6 AUTO BIO ON/OFF
-
-*_24/7 News Service_⤵️*
-┣┣7 Activate News Service
-┃┗━━━━━━━━━━━━━━━┛
-┗━━━━━━━━━━━━━━━━━━┛`
+            image: { url: bot.ALIVE_IMG },
+            caption: menu
         }, { quoted: mek });
+
         console.log(`♻ Setting Command Used : ${from}`);
-        conn.ev.on('messages.upsert', async (msgUpdate) => {
+
+        conn.ev.on('messages.upsert', async function handler(msgUpdate) {
             const msg = msgUpdate.messages[0];
             if (!msg.message || !msg.message.extendedTextMessage) return;
 
-            const selectedOption = msg.message.extendedTextMessage.text.trim();
+            const opt = msg.message.extendedTextMessage.text.trim();
+            const ctx = msg.message.extendedTextMessage.contextInfo;
+            if (!ctx || ctx.stanzaId !== vv.key.id) return;
 
-            if (msg.message.extendedTextMessage.contextInfo && msg.message.extendedTextMessage.contextInfo.stanzaId === vv.key.id) {
-                switch (selectedOption) {
-                    case '1.1':
-                        if (!isOwner) return;
-                        reply('.update MODE:public');
-                        reply('.restart');
-                        break;
-                    case '1.2':
-                        if (!isOwner) return;
-                        reply('.update MODE:private');
-                        reply('.restart');
-                        break;
-                    case '1.3':
-                        if (!isOwner) return;
-                        reply('.update MODE:groups');
-                        reply('.restart');
-                        break;
-                    case '1.4':
-                        if (!isOwner) return;
-                        reply('.update MODE:inbox');
-                        reply('.restart');
-                        break;
-                    case '2.1':
-                        if (!isOwner) return;
-                        reply('.update AUTO_VOICE:true');
-                        break;
-                    case '2.2':
-                        if (!isOwner) return;
-                        reply('.update AUTO_VOICE:false');
-                        break;
-                    case '3.1':
-                        if (!isOwner) return;
-                        reply('.update AUTO_READ_STATUS:true');
-                        break;
-                    case '3.2':
-                        if (!isOwner) return;
-                        reply('.update AUTO_READ_STATUS:false');
-                        break;
-                    case '4.1':
-                        if (!isOwner) return;
-                        reply('.update AUTO_REACT:true');
-                        reply('.restart');
-                        break;
-                    case '4.2':
-                        if (!isOwner) return;
-                        reply('.update AUTO_REACT:false');
-                        reply('.restart');
-                        break;
-                    case '5.1':
-                        if (!isOwner) return;
-                        reply('.update AUTO_TYPING:true');
-                        break;
-                    case '5.2':
-                        if (!isOwner) return;
-                        reply('.update AUTO_TYPING:false');
-                        break;
-                    case '6':
-                        if (!isOwner) return;
-                        reply('.setautobio');
-                        break;    
-                    case '7':
-                        if (!isOwner) return;
-                        reply('.sprikynews');
-                        break;    
-                        sprikynes
-                    default:
-                        reply("Invalid option. Please select a valid option🔴");
-                }
+            if (!checkOwner(msg.key.participant || msg.key.remoteJid, conn.user)) return;
 
+            const toggle = (key) => {
+                const cur = settings.get(key);
+                const val = cur === 'true' ? 'false' : 'true';
+                settings.set(key, val);
+                reply("✅ *" + key + "*: " + (val === 'true' ? 'ON' : 'OFF'));
+            };
+
+            switch (opt) {
+                case '1a': settings.set('MODE', 'public'); reply('✅ Mode: PUBLIC 🌎'); break;
+                case '1b': settings.set('MODE', 'private'); reply('✅ Mode: PRIVATE 👤'); break;
+                case '1c': settings.set('MODE', 'groups'); reply('✅ Mode: GROUPS ONLY 👥'); break;
+                case '1d': settings.set('MODE', 'inbox'); reply('✅ Mode: INBOX ONLY 🫂'); break;
+                case '2': toggle('ANTI_DELETE'); break;
+                case '2a': settings.set('ANTI_DELETE_TYPE', 'same'); reply('✅ Anti-Delete type: Same Chat'); break;
+                case '2b': settings.set('ANTI_DELETE_TYPE', 'inbox'); reply('✅ Anti-Delete type: Inbox'); break;
+                case '2c': settings.set('ANTI_DELETE_TYPE', 'both'); reply('✅ Anti-Delete type: Both'); break;
+                case '3': toggle('ANTI_EDIT'); break;
+                case '4': toggle('ANTI_LINK'); break;
+                case '5': toggle('ANTI_BAD'); break;
+                case '6': toggle('ANTI_CALL'); break;
+                case '7': toggle('ANTI_VV'); break;
+                case '8': toggle('ANTI_BOT'); break;
+                case '9': toggle('READ_MESSAGE'); break;
+                case '10': toggle('AUTO_REACT'); break;
+                case '11': toggle('AUTO_TYPING'); break;
+                case '12': toggle('AUTO_RECORDING'); break;
+                case '13': toggle('ALWAYS_ONLINE'); break;
+                case '14': toggle('AUTO_BIO'); break;
+                case '15': toggle('AUTO_STATUS_SEEN'); break;
+                case '16': toggle('AUTO_STATUS_REPLY'); break;
+                case '17': toggle('AUTO_VOICE'); break;
+                case '18': toggle('AUTO_STICKER'); break;
+                case '19': toggle('AUTO_REPLY'); break;
+                case '20': toggle('READ_CMD'); break;
+                case '21': toggle('DELETE_LINKS'); break;
+                case '22': toggle('ADMIN_EVENTS'); break;
+                case '23': toggle('PUBLIC_MODE'); break;
+                case '24': toggle('AUTO_BLOCK'); break;
+                default: reply("❌ Invalid option. Reply with a number from the menu.");
             }
         });
     
     } catch (e) {
         console.log(e);
-        reply(`${e}`);
+        reply("" + e);
     }
 });
 //=================================================System===============================================
@@ -1146,7 +1118,7 @@ cmd({
           const lowerCaseMessage = body.toLowerCase();
           const containsBadWord = badWords.some(word => lowerCaseMessage.includes(word));
           
-          if (containsBadWord & config.ANTI_BAD === 'true') {
+          if (containsBadWord & settings.get('ANTI_BAD') === 'true') {
             await conn.sendMessage(from, { delete: mek.key }, { quoted: mek });
             await conn.sendMessage(from, { text: "🚫 ⚠️BAD WORDS NOT ALLOWED⚠️ 🚫" }, { quoted: mek });
           }
@@ -1185,7 +1157,7 @@ cmd({
           if (!isGroup || isAdmins || !isBotAdmins) return; // Skip if not in group, or sender is admin, or bot is not admin
   
           const containsLink = linkPatterns.some(pattern => pattern.test(body));
-          if (containsLink && config.ANTI_LINK === 'true') {
+          if (containsLink && settings.get('ANTI_LINK') === 'true') {
               // Delete the message
               await conn.sendMessage(from, { delete: mek.key }, { quoted: mek });
   
@@ -1200,4 +1172,301 @@ cmd({
           reply("An error occurred while processing the message.");
       }
   });
+
+// ==========================================
+//              🤖 AI PLUGINS
+// ==========================================
+
+cmd({
+    pattern: "blackbox",
+    react: "🤖",
+    desc: "Chat with Blackbox AI",
+    category: "ai",
+    filename: __filename
+}, async (conn, mek, m, { from, q, reply }) => {
+    if (!q) return reply("Please provide a prompt. Example: .blackbox Hello");
+    try {
+        let { data } = await axios.get(`https://arslan-apis-v2.vercel.app/ai/blackbox?q=${encodeURIComponent(q)}`);
+        if (data.status) return reply(`*Blackbox AI:*\n\n${data.result}`);
+    } catch (e) { reply("Error fetching AI response."); }
+});
+
+cmd({
+    pattern: "blackbox4",
+    react: "🤖",
+    desc: "Chat with Blackbox V4 AI",
+    category: "ai",
+    filename: __filename
+}, async (conn, mek, m, { from, q, reply }) => {
+    if (!q) return reply("Please provide a prompt. Example: .blackbox4 Hello");
+    try {
+        let { data } = await axios.get(`https://arslan-apis-v2.vercel.app/ai/blackboxv4?q=${encodeURIComponent(q)}`);
+        if (data.status) return reply(`*Blackbox V4:*\n\n${data.result}`);
+    } catch (e) { reply("Error fetching AI response."); }
+});
+
+cmd({
+    pattern: "text2img",
+    react: "🎨",
+    desc: "Generate Image from Text",
+    category: "ai",
+    filename: __filename
+}, async (conn, mek, m, { from, q, reply }) => {
+    if (!q) return reply("Please provide a prompt. Example: .text2img flying car");
+    try {
+        let { data } = await axios.get(`https://arslan-apis-v2.vercel.app/ai/text2img?prompt=${encodeURIComponent(q)}`);
+        if (data.status) {
+            await conn.sendMessage(from, { image: { url: data.result }, caption: `🎨 *Prompt:* ${q}\n\nGenerated by Shitsu MD` }, { quoted: mek });
+        }
+    } catch (e) { reply("Error generating image."); }
+});
+
+// ==========================================
+//            🔍 SEARCH PLUGINS
+// ==========================================
+
+cmd({
+    pattern: "scsearch",
+    react: "🎵",
+    desc: "Search Soundcloud",
+    category: "search",
+    filename: __filename
+}, async (conn, mek, m, { from, q, reply }) => {
+    if (!q) return reply("Please provide a search query.");
+    try {
+        let { data } = await axios.get(`https://arslan-apis-v2.vercel.app/search/soundcloud?q=${encodeURIComponent(q)}`);
+        if (data.status && data.result.result.length > 0) {
+            let msg = `*☁️ Soundcloud Search Results ☁️*\n\n`;
+            data.result.result.slice(0, 5).forEach((track, i) => {
+                msg += `*${i + 1}. ${track.title}*\n👤 Artist: ${track.artist}\n⏱️ Duration: ${track.timestamp}\n🔗 Link: ${track.url}\n\n`;
+            });
+            reply(msg);
+        } else { reply("No results found."); }
+    } catch (e) { reply("Error fetching Soundcloud search."); }
+});
+
+cmd({
+    pattern: "stickersearch",
+    react: "🎭",
+    desc: "Search Stickers",
+    category: "search",
+    filename: __filename
+}, async (conn, mek, m, { from, q, reply }) => {
+    if (!q) return reply("Please provide a search query. Example: .stickersearch cat");
+    try {
+        let { data } = await axios.get(`https://arslan-apis-v2.vercel.app/search/sticker?q=${encodeURIComponent(q)}`);
+        if (data.status && data.result.sticker_url) {
+            reply(`*Found Sticker Pack:* ${data.result.title}\nSending first 3 stickers...`);
+            for (let i = 0; i < 3; i++) {
+                if (data.result.sticker_url[i]) {
+                    await conn.sendMessage(from, { sticker: { url: data.result.sticker_url[i] } }, { quoted: mek });
+                }
+            }
+        }
+    } catch (e) { reply("Error fetching stickers."); }
+});
+
+cmd({
+    pattern: "fontsearch",
+    react: "🔤",
+    desc: "Search Fonts",
+    category: "search",
+    filename: __filename
+}, async (conn, mek, m, { from, q, reply }) => {
+    if (!q) return reply("Please provide a font name.");
+    try {
+        let { data } = await axios.get(`https://arslan-apis-v2.vercel.app/search/fontSearch?q=${encodeURIComponent(q)}`);
+        if (data.status && data.result.length > 0) {
+            let msg = `*🔤 Font Search Results*\n\n`;
+            data.result.slice(0, 5).forEach((f, i) => {
+                msg += `*${i + 1}. ${f.title}*\n📥 DL: ${f.downloadLink}\n\n`;
+            });
+            reply(msg);
+        }
+    } catch (e) { reply("Error searching fonts."); }
+});
+
+cmd({
+    pattern: "wachannel",
+    react: "📱",
+    desc: "Get WhatsApp Channel Info",
+    category: "search",
+    filename: __filename
+}, async (conn, mek, m, { from, q, reply }) => {
+    if (!q || !q.includes("whatsapp.com/channel")) return reply("Please provide a valid WA Channel URL.");
+    try {
+        let { data } = await axios.get(`https://arslan-apis-v2.vercel.app/search/wachannel?url=${encodeURIComponent(q)}`);
+        if (data.status) {
+            reply(`*Channel Info:*\n${JSON.stringify(data.result, null, 2)}`);
+        } else { reply(data.err || "Failed to fetch channel info."); }
+    } catch (e) { reply("Error fetching channel info."); }
+});
+
+// ==========================================
+//          📥 DOWNLOAD PLUGINS
+// ==========================================
+
+cmd({
+    pattern: "ytmp3",
+    react: "🎶",
+    desc: "Download YouTube MP3",
+    category: "download",
+    filename: __filename
+}, async (conn, mek, m, { from, q, reply }) => {
+    if (!q || !q.includes("youtu")) return reply("Please provide a valid YouTube link.");
+    try {
+        let { data } = await axios.get(`https://arslan-apis-v2.vercel.app/download/ytmp3?url=${encodeURIComponent(q)}`);
+        if (data.status) {
+            let title = data.result.metadata.title;
+            let dlUrl = data.result.download.url;
+            await conn.sendMessage(from, { audio: { url: dlUrl }, mimetype: "audio/mpeg", fileName: `${title}.mp3` }, { quoted: mek });
+        }
+    } catch (e) { reply("Error downloading MP3."); }
+});
+
+cmd({
+    pattern: "ytmp4",
+    react: "🎥",
+    desc: "Download YouTube MP4",
+    category: "download",
+    filename: __filename
+}, async (conn, mek, m, { from, q, reply }) => {
+    if (!q || !q.includes("youtu")) return reply("Please provide a valid YouTube link.");
+    try {
+        let { data } = await axios.get(`https://arslan-apis-v2.vercel.app/download/ytmp4?url=${encodeURIComponent(q)}`);
+        if (data.status) {
+            let title = data.result.metadata.title;
+            let dlUrl = data.result.download.url;
+            await conn.sendMessage(from, { video: { url: dlUrl }, caption: `*${title}*` }, { quoted: mek });
+        }
+    } catch (e) { reply("Error downloading MP4."); }
+});
+
+cmd({
+    pattern: "twitter",
+    react: "🐦",
+    desc: "Download Twitter Video",
+    category: "download",
+    filename: __filename
+}, async (conn, mek, m, { from, q, reply }) => {
+    if (!q || !q.includes("twitter.com") && !q.includes("x.com")) return reply("Please provide a Twitter link.");
+    try {
+        let { data } = await axios.get(`https://arslan-apis-v2.vercel.app/download/twitter?url=${encodeURIComponent(q)}`);
+        if (data.status) {
+            let vidUrl = data.result.video_hd || data.result.video_sd;
+            await conn.sendMessage(from, { video: { url: vidUrl }, caption: data.result.desc }, { quoted: mek });
+        }
+    } catch (e) { reply("Error downloading Twitter video."); }
+});
+
+cmd({
+    pattern: "mediafire",
+    react: "📁",
+    desc: "Download from Mediafire",
+    category: "download",
+    filename: __filename
+}, async (conn, mek, m, { from, q, reply }) => {
+    if (!q || !q.includes("mediafire.com")) return reply("Please provide a valid Mediafire link.");
+    try {
+        let { data } = await axios.get(`https://arslan-apis-v2.vercel.app/download/mfire?url=${encodeURIComponent(q)}`);
+        if (data.status) {
+            let file = data.result;
+            reply(`*Downloading File...*\n📁 Name: ${file.fileName}\n⚖️ Size: ${file.size}`);
+            await conn.sendMessage(from, { document: { url: file.dl_link }, mimetype: file.fileType, fileName: file.fileName }, { quoted: mek });
+        }
+    } catch (e) { reply("Error downloading from Mediafire."); }
+});
+
+// ==========================================
+//          📰 NEWS PLUGINS (SRI LANKA)
+// ==========================================
+
+const newsProviders = ['derana', 'sirasa', 'bbc', 'lankadeepa', 'siyatha', 'lnw', 'dasathalankanews', 'gossiplankanews', 'cricbuzz'];
+
+newsProviders.forEach(provider => {
+    cmd({
+        pattern: provider,
+        react: "🗞️",
+        desc: `Get latest news from ${provider.toUpperCase()}`,
+        category: "news",
+        filename: __filename
+    }, async (conn, mek, m, { from, reply }) => {
+        try {
+            let { data } = await axios.get(`https://arslan-apis-v2.vercel.app/news/${provider}`);
+            if (data.status && data.result) {
+                let res = data.result;
+                let msg = `*📰 ${provider.toUpperCase()} NEWS*\n\n*${res.title || res.to_win || 'No Title'}*\n\n${res.desc || res.target || ''}\n\n🗓️ Date: ${res.date || ''}\n🔗 Read More: ${res.link}`;
+                
+                if (res.img || res.image) {
+                    await conn.sendMessage(from, { image: { url: res.img || res.image }, caption: msg }, { quoted: mek });
+                } else {
+                    reply(msg);
+                }
+            } else {
+                reply("Could not fetch news at the moment.");
+            }
+        } catch (e) { reply(`Error fetching ${provider} news.`); }
+    });
+});
+
+// ==========================================
+//             🎬 MOVIE PLUGINS
+// ==========================================
+
+cmd({
+    pattern: "zoomsearch",
+    react: "🎞️",
+    desc: "Search Subtitles/Movies on Zoom",
+    category: "movie",
+    filename: __filename
+}, async (conn, mek, m, { from, q, reply }) => {
+    if (!q) return reply("Please provide a movie name.");
+    try {
+        let { data } = await axios.get(`https://arslan-apis-v2.vercel.app/movie/zoom/search?text=${encodeURIComponent(q)}`);
+        if (data.status && data.result.data.length > 0) {
+            let msg = `*🎬 Zoom Subtitle Search*\n\n`;
+            data.result.data.slice(0, 5).forEach((movie, i) => {
+                msg += `*${i + 1}. ${movie.title}*\n👤 Author: ${movie.author}\n🔗 Link: ${movie.link}\n\n`;
+            });
+            reply(msg);
+        } else { reply("No movies found."); }
+    } catch (e) { reply("Error searching zoom."); }
+});
+
+// ==========================================
+//             🛠️ MISC / TOOLS
+// ==========================================
+
+cmd({
+    pattern: "tempmail",
+    react: "📧",
+    desc: "Generate Temporary Email",
+    category: "misc",
+    filename: __filename
+}, async (conn, mek, m, { from, reply }) => {
+    try {
+        let { data } = await axios.get(`https://arslan-apis-v2.vercel.app/more/tempmail`);
+        if (data.status) {
+            reply(`*📧 Temp Mail Generated*\n\n✉️ Email: \`${data.result[0]}\`\n🔑 Session ID: \`${data.result[1]}\`\n\n_Use .tempinbox <session_id> to check mails._`);
+        }
+    } catch (e) { reply("Error generating temp mail."); }
+});
+
+cmd({
+    pattern: "tempinbox",
+    react: "📨",
+    desc: "Check Temp Mail Inbox",
+    category: "misc",
+    filename: __filename
+}, async (conn, mek, m, { from, q, reply }) => {
+    if (!q) return reply("Please provide the session ID (You get it from .tempmail)");
+    try {
+        let { data } = await axios.get(`https://arslan-apis-v2.vercel.app/more/get_inbox_tempmail?q=${encodeURIComponent(q)}`);
+        if (data.status) {
+            reply(`*📬 Inbox:*\n\n${JSON.stringify(data.result, null, 2)}`);
+        } else { reply(data.err || "Inbox empty or invalid ID."); }
+    } catch (e) { reply("Error checking inbox."); }
+});
+
+
   

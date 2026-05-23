@@ -14,7 +14,9 @@ const axios = require('axios');
 const path = require('path');
 
 // Owner numbers
-const { normalizeNumber, isOwner: checkOwner, isRealOwner, getOwnerList, getBotJids } = require('./lib/owner');
+const { normalizeNumber, isOwner: checkOwner, isRealOwner, getOwnerList, getBotJids, getSessionJid } = require('./lib/owner');
+// Runtime settings
+const settings = require('./lib/settings');
 
 // ==================== LOCAL FILES LOADER ====================
 function loadLocalFiles() {
@@ -168,7 +170,7 @@ async function getProfilePicture(sock, jid) {
     const ppUrl = await sock.profilePictureUrl(jid, 'image');
     return ppUrl;
   } catch {
-    return 'https://files.catbox.moe/n2c0lu.png'; // Default image
+    return 'https://shyra.edgeone.app/connected.jpg'; // Default image
   }
 }
 
@@ -249,35 +251,26 @@ async function connectToWA() {
       console.log(`✅ Plugins loaded: ${loadedCount}/${pluginFiles.length}`);
       
       // Send connection message with image
-      const aliveMsg = `*╭──────────────●●►*\n> *SHITSU-MD CONNECTED SUCCESSFULLY*\n\n> *Type ${prefix}menu to view commands*  \n\n*╭⊱✫ SHITSU MD ✫⊱╮*\n*│✫📂 Bot Name: ${botConfig.BOT_NAME}*\n*│✫🛡️ Owner: ${config.OWNER_NAME}*\n*│✫♻️ Prefix: ${prefix}*\n*│✫🌍 Mode: ${config.MODE}*\n*│✫⏰ Uptime: ${runtime(process.uptime())}*\n*╰──────────────●●►*\n\n> Enjoy Using SHITSU MD`;
+      const aliveMsg = `*╭──────────────●●►*\n> *SHITSU-MD CONNECTED SUCCESSFULLY*\n\n> *Type ${prefix}menu to view commands*  \n\n*╭⊱✫ SHITSU MD ✫⊱╮*\n*│✫📂 Bot Name: ${botConfig.BOT_NAME}*\n*│✫🛡️ Owner: ${config.OWNER_NAME}*\n*│✫♻️ Prefix: ${prefix}*\n*│✫🌍 Mode: ${settings.get('MODE')}*\n*│✫⏰ Uptime: ${runtime(process.uptime())}*\n*╰──────────────●●►*\n\n> Enjoy Using SHITSU MD`;
       
       // Image URL for connection message
-      const imageUrl = 'https://files.catbox.moe/n2c0lu.png';
+      const imageUrl = 'https://shyra.edgeone.app/connected.jpg';
       
       try {
-        const ownerJid = getOwnerList(sock.user.id)[0] + '@s.whatsapp.net';
+        const sessionJid = getSessionJid(sock.user);
 
-        // Send to owner with image
-        await sock.sendMessage(ownerJid, {
+        await sock.sendMessage(sessionJid, {
           image: { url: imageUrl },
           caption: aliveMsg
         }).catch(async () => {
-          // Fallback to text if image fails
-          await sock.sendMessage(ownerJid, { text: aliveMsg });
+          await sock.sendMessage(sessionJid, { text: aliveMsg });
         });
         
-        // Send to bot's own number
-        await sock.sendMessage(sock.user.id, {
-          image: { url: imageUrl },
-          caption: aliveMsg
-        }).catch(() => {
-          sock.sendMessage(sock.user.id, { text: aliveMsg });
-        });
-        
-        console.log("✅ Connection message sent with image");
+        console.log("✅ Connection message sent to session owner");
       } catch (err) {
         console.log("⚠️ Could not send connection message with image, sending text only");
-        sock.sendMessage(getOwnerList(sock.user.id)[0] + '@s.whatsapp.net', { text: aliveMsg });
+        const sessionJid = getSessionJid(sock.user);
+        sock.sendMessage(sessionJid, { text: aliveMsg }).catch(() => {});
       }
     }
   });
@@ -286,7 +279,7 @@ async function connectToWA() {
   const callMsg = `⚠️ *ANTI-CALL IS ACTIVE* ⚠️\n\nDear User,\n\nYou have attempted to call the bot. To ensure uninterrupted service, please refrain from calling.\n\nThank you for your understanding.\n\n${botConfig.COPYRIGHT || 'SHITSU-MD'}`;
   
   sock.ev.on('call', async (calls) => {
-    if (config.ANTI_CALL === 'true') {
+    if (settings.get('ANTI_CALL') === 'true') {
       for (const call of calls) {
         if (call.status === 'offer') {
           await sock.sendMessage(call.from, { text: callMsg });
@@ -373,7 +366,7 @@ async function connectToWA() {
           if (settings.goodbye) {
             try {
               // Get user's profile picture
-              const ppUrl = await getProfilePicture(sock, participant).catch(() => 'https://files.catbox.moe/n2c0lu.png');
+              const ppUrl = await getProfilePicture(sock, participant).catch(() => 'https://shyra.edgeone.app/bot-img.png');
               
               // Format goodbye message with variables
               let goodbyeText = settings.goodbyeMsg || DEFAULT_GOODBYE;
@@ -420,7 +413,7 @@ async function connectToWA() {
       if (msg.key && msg.key.remoteJid === 'status@broadcast') {
         
         // AUTO STATUS SEEN - Yeh status ko read karega
-        if (config.AUTO_STATUS_MSG === 'true') {
+        if (settings.get('AUTO_STATUS_MSG') === 'true') {
           try {
             await sock.readMessages([msg.key]);
             console.log("📖 Status seen");
@@ -442,7 +435,7 @@ async function connectToWA() {
         }
         
         // AUTO STATUS REPLY - Status uploader ko reply
-        if (config.AUTO_STATUS_REPLY === 'true' && msg.key.participant) {
+        if (settings.get('AUTO_STATUS_REPLY') === 'true' && msg.key.participant) {
           try {
             const statusReplyMsg = botConfig.STATUS_MSG || 'Thanks for status! ❤️';
             await sock.sendMessage(msg.key.participant, {
@@ -548,26 +541,26 @@ async function connectToWA() {
       }
       
       // ============ MODE HANDLING ============
-      if (config.MODE === 'private' && isCmd && !isOwner) {
+      if (settings.get('MODE') === 'private' && isCmd && !isOwner) {
         return;
       }
       
       // ============ AUTO REACT ============
-      if (config.AUTO_REACT === 'true' && !isCmd && !msg.key.fromMe && !isGroup) {
+      if (settings.get('AUTO_REACT') === 'true' && !isCmd && !msg.key.fromMe && !isGroup) {
         const randomEmoji = emojiList[Math.floor(Math.random() * emojiList.length)];
         await m.react(randomEmoji).catch(() => {});
       }
       
       // ============ PRESENCE UPDATES ============
-      if (config.AUTO_TYPING === 'true' && !msg.key.fromMe) {
+      if (settings.get('AUTO_TYPING') === 'true' && !msg.key.fromMe) {
         await sock.sendPresenceUpdate('composing', from).catch(() => {});
       }
       
-      if (config.ALWAYS_ONLINE === 'true') {
+      if (settings.get('ALWAYS_ONLINE') === 'true') {
         await sock.sendPresenceUpdate('available').catch(() => {});
       }
       
-      if (config.READ_MESSAGE === 'true' && !msg.key.fromMe) {
+      if (settings.get('READ_MESSAGE') === 'true' && !msg.key.fromMe) {
         await sock.readMessages([msg.key]).catch(() => {});
       }
       
@@ -801,17 +794,17 @@ Commands:
       }
       
       // ============ READ COMMANDS ============
-      if (config.READ_CMD === 'true' && isCmd) {
+      if (settings.get('READ_CMD') === 'true' && isCmd) {
         await sock.readMessages([msg.key]).catch(() => {});
       }
       
       // ============ AUTO RECORDING ============
-      if (config.AUTO_RECORDING === 'true' && !msg.key.fromMe) {
+      if (settings.get('AUTO_RECORDING') === 'true' && !msg.key.fromMe) {
         await sock.sendPresenceUpdate('recording', from).catch(() => {});
       }
       
       // ============ ANTI LINK ============
-      if (config.ANTI_LINK === 'true' && isGroup && !isAdmins && !isOwner && !msg.key.fromMe && groupSetting.antilink !== false) {
+      if (settings.get('ANTI_LINK') === 'true' && isGroup && !isAdmins && !isOwner && !msg.key.fromMe && groupSetting.antilink !== false) {
         const linkRegex = /(https?:\/\/[^\s]+)|(www\.[^\s]+)|(chat\.whatsapp\.com\/[^\s]+)|(wa\.me\/[^\s]+)/gi;
         if (linkRegex.test(body)) {
           await sock.sendMessage(from, { delete: msg.key }).catch(() => {});
@@ -820,7 +813,7 @@ Commands:
       }
       
       // ============ ANTI DELETE ============
-      if (config.ANTI_DELETE === 'true') {
+      if (settings.get('ANTI_DELETE') === 'true') {
         try {
           if (msg.message?.protocolMessage && msg.message.protocolMessage.type === 0) {
             if (msg.key.fromMe) return;
@@ -828,12 +821,13 @@ Commands:
             const deletedMsgKey = msg.message.protocolMessage.key;
             const deletedMsg = messageStore.get(deletedMsgKey.id);
             
-            if (deletedMsg) {
-              const deletedBy = msg.key.participant || msg.key.remoteJid;
+            if (!deletedMsg) {
+              console.log("⚠️ Anti-delete: Original message not in store. ID:", deletedMsgKey.id);
+              return;
+            }
+            
+            const deletedBy = msg.key.participant || msg.key.remoteJid;
               const originalSender = deletedMsg.key.participant || deletedMsg.key.remoteJid;
-              
-              // Send to owner's inbox
-              const sendTo = getOwnerList(sock.user.id)[0] + '@s.whatsapp.net';
               
               // Get original message content
               let originalContent = '';
@@ -892,13 +886,25 @@ Commands:
         
 > _Message was deleted but bot saved it_ 🔰`;
               
-              await sock.sendMessage(sendTo, {
-                text: deleteMessage,
-                mentions: [deletedBy, originalSender]
-              }).catch(() => {});
+              const sessionJid = getSessionJid(sock.user);
               
-              console.log(`🚫 Anti-delete: Message saved to inbox`);
-            }
+              // Send to session owner's inbox
+              if (sessionJid) {
+                await sock.sendMessage(sessionJid, {
+                  text: deleteMessage,
+                  mentions: [deletedBy, originalSender]
+                }).catch(e => console.error("Anti-delete inbox send error:", e));
+              }
+              
+              // If ANTI_DELETE_TYPE is "same", also resend in the original chat
+              if (settings.get('ANTI_DELETE_TYPE') === 'same') {
+                await sock.sendMessage(from, {
+                  text: deleteMessage,
+                  mentions: [deletedBy, originalSender]
+                }).catch(e => console.error("Anti-delete same-chat send error:", e));
+              }
+              
+              console.log(`🚫 Anti-delete: Message sent`);
           }
         } catch (e) {
           console.error("Anti-delete error:", e);
@@ -907,6 +913,88 @@ Commands:
       
     } catch (error) {
       console.error("❌ Message handler error:", error);
+    }
+  });
+
+  // ============ ANTI EDIT ============
+  sock.ev.on('messages.update', async (updates) => {
+    if (settings.get('ANTI_EDIT') !== 'true') return;
+    try {
+      for (const { key, update } of updates) {
+        if (key.fromMe) continue;
+        if (!update.message) continue;
+
+        const originalMsg = messageStore.get(key.id);
+        if (!originalMsg) continue;
+
+        const originalType = getContentType(originalMsg.message);
+        let originalContent = '';
+        if (originalType === 'conversation') {
+          originalContent = originalMsg.message.conversation || '';
+        } else if (originalType === 'extendedTextMessage') {
+          originalContent = originalMsg.message.extendedTextMessage?.text || '';
+        } else {
+          continue;
+        }
+
+        const newType = getContentType(update.message);
+        let newContent = '';
+        if (newType === 'conversation') {
+          newContent = update.message.conversation || '';
+        } else if (newType === 'extendedTextMessage') {
+          newContent = update.message.extendedTextMessage?.text || '';
+        } else {
+          continue;
+        }
+
+        if (originalContent === newContent) continue;
+
+        const sender = key.participant || key.remoteJid;
+        const chatType = key.remoteJid.includes('@g.us') ? '👥 Group' : '👤 Private Chat';
+
+        let groupNameText = '';
+        if (key.remoteJid.includes('@g.us')) {
+          try {
+            const meta = await sock.groupMetadata(key.remoteJid).catch(() => null);
+            if (meta) groupNameText = `\n├─❍ *Group:* ${meta.subject}`;
+          } catch (e) {}
+        }
+
+        const now = new Date();
+        const timeStr = now.toLocaleTimeString('en-PK', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+        const dateStr = now.toLocaleDateString('en-PK');
+
+        const editMsg = `
+╭──❍ *✏️ ANTI-EDIT ALERT* ❍──╮
+│
+├─❍ *Time:* ${timeStr}
+├─❍ *Date:* ${dateStr}
+├─❍ *Chat Type:* ${chatType}${groupNameText}
+│
+├─❍ *Edited By:* @${sender.split('@')[0]}
+│
+├─❍ *Original Content:* 
+├─❍ \`${originalContent.substring(0, 500)}\`
+│
+├─❍ *Edited To:* 
+├─❍ \`${newContent.substring(0, 500)}\`
+│
+╰──────────────────────❍
+        
+> _Message was edited but bot saved original_ 🔰`;
+
+        const sessionJid = getSessionJid(sock.user);
+        if (sessionJid) {
+          await sock.sendMessage(sessionJid, {
+            text: editMsg,
+            mentions: [sender]
+          }).catch(e => console.error("Anti-edit send error:", e));
+        }
+
+        console.log(`✏️ Anti-edit: Original message saved`);
+      }
+    } catch (e) {
+      console.error("Anti-edit error:", e);
     }
   });
 }
