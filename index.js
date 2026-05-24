@@ -10,6 +10,7 @@ const {
 const fs = require('fs');
 const P = require('pino');
 const config = require('./setting');
+const botConfig = require('./lib/bot');
 const axios = require('axios');
 const path = require('path');
 
@@ -150,7 +151,7 @@ app.get('/', (req, res) => {
           <h1>🤖 SHITSU-MD</h1>
           <p class="status">✅ BOT IS CONNECTED</p>
           <p>Type .menu in WhatsApp to see commands</p>
-          <p>Owner: ${config.OWNER_NAME || 'SHITSU'}</p>
+          <p>Owner: ${botConfig.OWNER_NAME || 'SHITSU'}</p>
         </div>
       </body>
       </html>
@@ -178,18 +179,17 @@ async function getProfilePicture(sock, jid) {
 async function connectToWA() {
   console.log("✅ Using local lib and plugins only");
   
-  const prefix = config.PREFIX || '.';
+  const prefix = botConfig.PREFIX || '.';
   console.log(`🤖 SHITSU-MD Connecting with prefix: "${prefix}"`);
   
   const { state: authState, saveCreds: saveCreds } = await useMultiFileAuthState(__dirname + '/auth_info_baileys/');
   
   // Load required modules from lib
-  let functions, sms, botConfig;
+  let functions, sms;
   
   try {
     functions = require('./lib/functions');
     sms = require('./lib/msg').sms;
-    botConfig = require('./lib/bot');
     console.log("✅ Lib files loaded successfully");
   } catch (err) {
     console.log("❌ Error loading lib files:", err);
@@ -251,7 +251,7 @@ async function connectToWA() {
       console.log(`✅ Plugins loaded: ${loadedCount}/${pluginFiles.length}`);
       
       // Send connection message with image
-      const aliveMsg = `*╭──────────────●●►*\n> *SHITSU-MD CONNECTED SUCCESSFULLY*\n\n> *Type ${prefix}menu to view commands*  \n\n*╭⊱✫ SHITSU MD ✫⊱╮*\n*│✫📂 Bot Name: ${botConfig.BOT_NAME}*\n*│✫🛡️ Owner: ${config.OWNER_NAME}*\n*│✫♻️ Prefix: ${prefix}*\n*│✫🌍 Mode: ${settings.get('MODE')}*\n*│✫⏰ Uptime: ${runtime(process.uptime())}*\n*╰──────────────●●►*\n\n> Enjoy Using SHITSU MD`;
+      const aliveMsg = `*╭──────────────●●►*\n> *SHITSU-MD CONNECTED SUCCESSFULLY*\n\n> *Type ${prefix}menu to view commands*  \n\n*╭⊱✫ SHITSU MD ✫⊱╮*\n*│✫📂 Bot Name: ${botConfig.BOT_NAME}*\n*│✫🛡️ Owner: ${botConfig.OWNER_NAME}*\n*│✫♻️ Prefix: ${prefix}*\n*│✫🌍 Mode: ${settings.get('MODE')}*\n*│✫⏰ Uptime: ${runtime(process.uptime())}*\n*╰──────────────●●►*\n\n> Enjoy Using SHITSU MD`;
       
       // Image URL for connection message
       const imageUrl = 'https://shyra.edgeone.app/connected.jpg';
@@ -413,27 +413,28 @@ async function connectToWA() {
       if (msg.key && msg.key.remoteJid === 'status@broadcast') {
         
         // AUTO STATUS SEEN - Yeh status ko read karega
-        if (settings.get('AUTO_STATUS_MSG') === 'true') {
+        if (settings.get('AUTO_STATUS_SEEN') === 'true') {
           try {
             await sock.readMessages([msg.key]);
             console.log("📖 Status seen");
-            
-            // Status par react bhi karega
-            const botJid = await jidNormalizedUser(sock.user.id);
-            await sock.sendMessage(msg.key.remoteJid, {
-              react: {
-                key: msg.key,
-                text: '💚'
-              }
-            }, {
-              statusJidList: [msg.key.participant, botJid]
-            }).catch(() => {});
-            
+
+            if (settings.get('AUTO_STATUS_REACT') === 'true') {
+              const botJid = await jidNormalizedUser(sock.user.id);
+              const emoji = settings.get('STATUS_EMOJI') || botConfig.STATUS_EMOJI || '💚';
+              await sock.sendMessage(msg.key.remoteJid, {
+                react: {
+                  key: msg.key,
+                  text: emoji
+                }
+              }, {
+                statusJidList: [msg.key.participant, botJid]
+              }).catch(() => {});
+            }
           } catch (error) {
             console.error("❌ Failed to mark status as read:", error);
           }
         }
-        
+
         // AUTO STATUS REPLY - Status uploader ko reply
         if (settings.get('AUTO_STATUS_REPLY') === 'true' && msg.key.participant) {
           try {
@@ -490,7 +491,7 @@ async function connectToWA() {
         console.log('🔍 [OWNER-DEBUG] isOwner:', isOwner);
         console.log('🔍 [OWNER-DEBUG] sock.user.id:', sock.user?.id);
         console.log('🔍 [OWNER-DEBUG] sock.user.lid:', sock.user?.lid);
-        console.log('🔍 [OWNER-DEBUG] config.OWNER_NUMBER:', config.OWNER_NUMBER);
+        console.log('🔍 [OWNER-DEBUG] botConfig.OWNER_NUMBER:', botConfig.OWNER_NUMBER);
         console.log('🔍 [OWNER-DEBUG] config.DEV:', config.DEV);
       }
       

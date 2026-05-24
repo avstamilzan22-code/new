@@ -1,16 +1,11 @@
 const fs = require('fs');
-if (fs.existsSync('config.env')) require('dotenv').config({ path: './config.env' });
+const dotenvPath = fs.existsSync('bot.env')
+  ? './bot.env'
+  : fs.existsSync('config.env')
+  ? './config.env'
+  : null;
+if (dotenvPath) require('dotenv').config({ path: dotenvPath });
 
-function convertToBool(text, fault = 'true') {
-    return text === fault ? true : false;
-}
 module.exports = {
-SESSION_ID: process.env.SESSION_ID || "SHITSU-MD~eyJub2lzZUtleSI6eyJwcml2YXRlIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiaUw2cm1KQVgycnVYVERSdWdFNEdudnhaY29aYW4ybmcxSExmdE5KRWVIcz0ifSwicHVibGljIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoibzZKdW5kT3hoWmU5d1dkbzJ6Y2JZSitvSjI0TllSS24wNjFaR2t6a2FRQT0ifX0sInBhaXJpbmdFcGhlbWVyYWxLZXlQYWlyIjp7InByaXZhdGUiOnsidHlwZSI6IkJ1ZmZlciIsImRhdGEiOiJvS05LTXVnU0tlNGRSRHV4dXlOaEY2K3BKanNDa2N5b3ZIUU1kNWNLZzFNPSJ9LCJwdWJsaWMiOnsidHlwZSI6IkJ1ZmZlciIsImRhdGEiOiJsaW5sZDVTcVNOY1hNV05tTWE0MkpON2VwYlRiQWE4KzB0TGkzaWN5K1FrPSJ9fSwic2lnbmVkSWRlbnRpdHlLZXkiOnsicHJpdmF0ZSI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6IlVMNHlSN01BM1RDc25UbjBUaTBYempqV2NXSkZVb2FXM3F3S3NLWWVQMTg9In0sInB1YmxpYyI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6Ik9MQzV3QlNWOHZEeEhqVVNXYkNvcXcxR1BjZnUxeTAxQ3RBRDc1SEJKMjA9In19LCJzaWduZWRQcmVLZXkiOnsia2V5UGFpciI6eyJwcml2YXRlIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiT0lCa281eTRrWFRFUFNibHp3cS9EeEVnbUxjbkowZ1pBMThqMzJ1Yy8xTT0ifSwicHVibGljIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoibWJ0WXNYUitzZ01sT25WcnI4cnZzOWRDOWxIN2hTMzJhWmlsSWdVZ3ExST0ifX0sInNpZ25hdHVyZSI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6Im5NVmROUDBTbWMzNUJGaW1UaGMzY0Zrd1NhTWdIbTVqSTFYQ2FLMi8rMi9kY0gvTzlDcXFKOXVKblRwRkc2bGtkeTdoMUZHZm1wNTZBOG92cVk4MmdBPT0ifSwia2V5SWQiOjF9LCJyZWdpc3RyYXRpb25JZCI6MjUxLCJhZHZTZWNyZXRLZXkiOiJIODhIODVXQUhlalp5aFFGQm9pWUJIQ1Noa1dkV2ZKZ0R2NmhqR3BWSlU0PSIsInByb2Nlc3NlZEhpc3RvcnlNZXNzYWdlcyI6W3sia2V5Ijp7InJlbW90ZUppZCI6Ijk0Nzg4NzI0NDIzQHMud2hhdHNhcHAubmV0IiwiZnJvbU1lIjp0cnVlLCJpZCI6IkFDQUYzMTkzMjhEM0JEQUFBNUM4OEU1MkNEOThBRjIwIn0sIm1lc3NhZ2VUaW1lc3RhbXAiOjE3Nzk1NDgyMjF9LHsia2V5Ijp7InJlbW90ZUppZCI6Ijk0Nzg4NzI0NDIzQHMud2hhdHNhcHAubmV0IiwiZnJvbU1lIjp0cnVlLCJpZCI6IkFDMDcwMUI0RTBFQTE0MUUxODlENDAzNjI4Njg2NkQwIn0sIm1lc3NhZ2VUaW1lc3RhbXAiOjE3Nzk1NDgyMjF9LHsia2V5Ijp7InJlbW90ZUppZCI6Ijk0Nzg4NzI0NDIzQHMud2hhdHNhcHAubmV0IiwiZnJvbU1lIjp0cnVlLCJpZCI6IkFDNEMwOENCRDZGNjJCMDRBRjc2RjkwODhENkI3QTI2In0sIm1lc3NhZ2VUaW1lc3RhbXAiOjE3Nzk1NDgyMjJ9XSwibmV4dFByZUtleUlkIjo4MTMsImZpcnN0VW51cGxvYWRlZFByZUtleUlkIjo4MTMsImFjY291bnRTeW5jQ29...",
-API_BASE: process.env.API_BASE || "https://arslan-apis.vercel.app/",
-API_KEY: process.env.API_KEY || "arslanmdofficialadmin",
-OWNER_NUMBER: process.env.OWNER_NUMBER || "",
-OWNER_NAME: process.env.OWNER_NAME || "LovelyMD Official",
-BOT_NAME: process.env.BOT_NAME || "SHITSU-MD",
-STICKER_NAME: process.env.STICKER_NAME || "SHITSU-MD",
-PREFIX: process.env.PREFIX || "."
+  SESSION_ID: process.env.SESSION_ID || ""
 };

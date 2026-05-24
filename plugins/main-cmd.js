@@ -6,7 +6,6 @@ const get_localized_date = { weekday: 'long', year: 'numeric', month: 'long', da
 const axios = require('axios');
 const { fakevCard } = require('../lib/fakevCard');
 const bot = require('../lib/bot')
-const config = require('../setting')
 const settings = require('../lib/settings')
 const { normalizeNumber, isOwner: checkOwner, getOwnerList } = require('../lib/owner')
 //========================================About==================================================
@@ -77,7 +76,7 @@ let aliveText =`👋 *HI*, *${pushname}* *I Am Alive Now*
   
 ╭─「 ꜱᴛᴀᴛᴜꜱ ᴅᴇᴛᴀɪʟꜱ 」
 │👤 *\`User\`*: ${pushname}
-│✒ *\`Prefix\`*: ${config.PREFIX}
+│✒ *\`Prefix\`*: ${bot.PREFIX}
 │🧬 *\`Version\`*: ${bot.VERSION}
 │📟 *\`Uptime\`*: ${runtime(process.uptime())}
 │📂 *\`Memory\`*: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(os.totalmem() / 1024 / 1024)}MB
@@ -173,8 +172,10 @@ async (conn, mek, m, { from, contextInfo, reply }) => {
 ┃▸└───────────···๏
 ╰────────────────┈⊷
 ╭━━〔 *Enabled Disabled* 〕━━┈⊷
-┇๏ *Status View:* ${isEnabled(settings.get('AUTO_READ_STATUS')) ? "Enabled ✅" : "Disabled ❌"}
+┇๏ *Status View:* ${isEnabled(settings.get('AUTO_STATUS_SEEN')) ? "Enabled ✅" : "Disabled ❌"}
 ┇๏ *Status Reply:* ${isEnabled(settings.get('AUTO_STATUS_REPLY')) ? "Enabled ✅" : "Disabled ❌"}
+┇๏ *Status React:* ${isEnabled(settings.get('AUTO_STATUS_REACT')) ? "Enabled ✅" : "Disabled ❌"}
+┇๏ *Status Emoji:* ${settings.get('STATUS_EMOJI') || bot.STATUS_EMOJI}
 ┇๏ *Auto Reply:* ${isEnabled(settings.get('AUTO_REPLY')) ? "Enabled ✅" : "Disabled ❌"}
 ┇๏ *Auto Sticker:* ${isEnabled(settings.get('AUTO_STICKER')) ? "Enabled ✅" : "Disabled ❌"}
 ┇๏ *Auto Voice:* ${isEnabled(settings.get('AUTO_VOICE')) ? "Enabled ✅" : "Disabled ❌"}
@@ -246,7 +247,7 @@ let madeMenu = `🤩 *Hello!* *${pushname}*
 
 ╭─「 ꜱᴛᴀᴛᴜꜱ ᴅᴇᴛᴀɪʟꜱ 」
 │👤 *\`User\`*: ${pushname}
-│✒ *\`Prefix\`*: ${config.PREFIX}
+│✒ *\`Prefix\`*: ${bot.PREFIX}
 │🧬 *\`Version\`*: ${bot.VERSION}
 │📟 *\`Uptime\`*: ${runtime(process.uptime())}
 │📂 *\`Memory\`*: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(os.totalmem() / 1024 / 1024)}MB
@@ -321,7 +322,7 @@ async (conn, mek, m, { from, pushname, reply, contextInfo }) => {
 
 ╭─「 ꜱᴛᴀᴛᴜꜱ ᴅᴇᴛᴀɪʟꜱ 」
 │👤 *\`User\`*: ${pushname}
-│✒ *\`Prefix\`*: ${config.PREFIX}
+│✒ *\`Prefix\`*: ${bot.PREFIX}
 │🧬 *\`Version\`*: ${bot.VERSION}
 │📟 *\`Uptime\`*: ${runtime(process.uptime())}
 │📂 *\`Memory\`*: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(os.totalmem() / 1024 / 1024)}MB
@@ -968,6 +969,68 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
             }
         }
 
+        const toggle = (key) => {
+            const cur = settings.get(key);
+            const val = cur === 'true' ? 'false' : 'true';
+            settings.set(key, val);
+            return `✅ *${key}*: ${val === 'true' ? 'ON' : 'OFF'}`;
+        };
+
+        const processSettingChoice = (opt, value = '') => {
+            if (!opt) return false;
+            switch (opt.toLowerCase()) {
+                case '1a': settings.set('MODE', 'public'); return '✅ Mode: PUBLIC 🌎';
+                case '1b': settings.set('MODE', 'private'); return '✅ Mode: PRIVATE 👤';
+                case '1c': settings.set('MODE', 'groups'); return '✅ Mode: GROUPS ONLY 👥';
+                case '1d': settings.set('MODE', 'inbox'); return '✅ Mode: INBOX ONLY 🫂';
+                case '2': return toggle('ANTI_DELETE');
+                case '2a': settings.set('ANTI_DELETE_TYPE', 'same'); return '✅ Anti-Delete type: Same Chat';
+                case '2b': settings.set('ANTI_DELETE_TYPE', 'inbox'); return '✅ Anti-Delete type: Inbox';
+                case '2c': settings.set('ANTI_DELETE_TYPE', 'both'); return '✅ Anti-Delete type: Both';
+                case '3': return toggle('ANTI_EDIT');
+                case '4': return toggle('ANTI_LINK');
+                case '5': return toggle('ANTI_BAD');
+                case '6': return toggle('ANTI_CALL');
+                case '7': return toggle('ANTI_VV');
+                case '8': return toggle('ANTI_BOT');
+                case '9': return toggle('READ_MESSAGE');
+                case '10': return toggle('AUTO_REACT');
+                case '11': return toggle('AUTO_TYPING');
+                case '12': return toggle('AUTO_RECORDING');
+                case '13': return toggle('ALWAYS_ONLINE');
+                case '14': return toggle('AUTO_BIO');
+                case '15': return toggle('AUTO_STATUS_SEEN');
+                case '16': return toggle('AUTO_STATUS_REPLY');
+                case '17': return toggle('AUTO_STATUS_REACT');
+                case '18':
+                    if (!value) return `Current status emoji: ${settings.get('STATUS_EMOJI') || bot.STATUS_EMOJI}\nReply with 18 <emoji> to update.`;
+                    settings.set('STATUS_EMOJI', value);
+                    return `✅ Status Emoji set to ${value}`;
+                case '19': return toggle('AUTO_VOICE');
+                case '20': return toggle('AUTO_STICKER');
+                case '21': return toggle('AUTO_REPLY');
+                case '22': return toggle('READ_CMD');
+                case '23': return toggle('DELETE_LINKS');
+                case '24': return toggle('ADMIN_EVENTS');
+                case '25': return toggle('PUBLIC_MODE');
+                case '26': return toggle('AUTO_BLOCK');
+                default: return false;
+            }
+        };
+
+        const input = q?.trim();
+        if (input) {
+            const parts = input.split(/\s+/);
+            let opt = parts[0].toLowerCase();
+            let value = parts.slice(1).join(' ');
+            if (opt === 'update' && parts.length > 1) {
+                opt = parts[1].toLowerCase();
+                value = parts.slice(2).join(' ');
+            }
+            const result = processSettingChoice(opt, value);
+            if (result) return reply(result);
+        }
+
         const menu = `
 ╭──❍ *SETTINGS* ❍──╮
 │
@@ -989,20 +1052,23 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ├─❍ 14. Auto-Bio: ${s('AUTO_BIO')}
 ├─❍ 15. Auto-Status Seen: ${s('AUTO_STATUS_SEEN')}
 ├─❍ 16. Auto-Status Reply: ${s('AUTO_STATUS_REPLY')}
-├─❍ 17. Auto-Voice: ${s('AUTO_VOICE')}
-├─❍ 18. Auto-Sticker: ${s('AUTO_STICKER')}
-├─❍ 19. Auto-Reply: ${s('AUTO_REPLY')}
-├─❍ 20. Read Cmd: ${s('READ_CMD')}
-├─❍ 21. Delete Links: ${s('DELETE_LINKS')}
-├─❍ 22. Admin Events: ${s('ADMIN_EVENTS')}
-├─❍ 23. Public Mode: ${s('PUBLIC_MODE')}
-├─❍ 24. Auto-Block: ${s('AUTO_BLOCK')}
+├─❍ 17. Auto-Status React: ${s('AUTO_STATUS_REACT')}
+├─❍ 18. Status Emoji: ${settings.get('STATUS_EMOJI') || bot.STATUS_EMOJI}
+├─❍ 19. Auto-Voice: ${s('AUTO_VOICE')}
+├─❍ 20. Auto-Sticker: ${s('AUTO_STICKER')}
+├─❍ 21. Auto-Reply: ${s('AUTO_REPLY')}
+├─❍ 22. Read Cmd: ${s('READ_CMD')}
+├─❍ 23. Delete Links: ${s('DELETE_LINKS')}
+├─❍ 24. Admin Events: ${s('ADMIN_EVENTS')}
+├─❍ 25. Public Mode: ${s('PUBLIC_MODE')}
+├─❍ 26. Auto-Block: ${s('AUTO_BLOCK')}
 │
 ╰──────────────────────❍
 
 > Reply with number to toggle
 > For mode: 1a=public 1b=private 1c=group 1d=inbox
-> For anti-delete type: 2a=same 2b=inbox 2c=both`;
+> For anti-delete type: 2a=same 2b=inbox 2c=both
+> To set status emoji: 18 <emoji> or .settings update 18 <emoji>`;
 
         const vv = await conn.sendMessage(from, {
             image: { url: bot.ALIVE_IMG },
@@ -1015,52 +1081,19 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
             const msg = msgUpdate.messages[0];
             if (!msg.message || !msg.message.extendedTextMessage) return;
 
-            const opt = msg.message.extendedTextMessage.text.trim();
+            const optText = msg.message.extendedTextMessage.text.trim();
             const ctx = msg.message.extendedTextMessage.contextInfo;
             if (!ctx || ctx.stanzaId !== vv.key.id) return;
 
             if (!checkOwner(msg.key.participant || msg.key.remoteJid, conn.user)) return;
+            conn.ev.off('messages.upsert', handler);
 
-            const toggle = (key) => {
-                const cur = settings.get(key);
-                const val = cur === 'true' ? 'false' : 'true';
-                settings.set(key, val);
-                reply("✅ *" + key + "*: " + (val === 'true' ? 'ON' : 'OFF'));
-            };
-
-            switch (opt) {
-                case '1a': settings.set('MODE', 'public'); reply('✅ Mode: PUBLIC 🌎'); break;
-                case '1b': settings.set('MODE', 'private'); reply('✅ Mode: PRIVATE 👤'); break;
-                case '1c': settings.set('MODE', 'groups'); reply('✅ Mode: GROUPS ONLY 👥'); break;
-                case '1d': settings.set('MODE', 'inbox'); reply('✅ Mode: INBOX ONLY 🫂'); break;
-                case '2': toggle('ANTI_DELETE'); break;
-                case '2a': settings.set('ANTI_DELETE_TYPE', 'same'); reply('✅ Anti-Delete type: Same Chat'); break;
-                case '2b': settings.set('ANTI_DELETE_TYPE', 'inbox'); reply('✅ Anti-Delete type: Inbox'); break;
-                case '2c': settings.set('ANTI_DELETE_TYPE', 'both'); reply('✅ Anti-Delete type: Both'); break;
-                case '3': toggle('ANTI_EDIT'); break;
-                case '4': toggle('ANTI_LINK'); break;
-                case '5': toggle('ANTI_BAD'); break;
-                case '6': toggle('ANTI_CALL'); break;
-                case '7': toggle('ANTI_VV'); break;
-                case '8': toggle('ANTI_BOT'); break;
-                case '9': toggle('READ_MESSAGE'); break;
-                case '10': toggle('AUTO_REACT'); break;
-                case '11': toggle('AUTO_TYPING'); break;
-                case '12': toggle('AUTO_RECORDING'); break;
-                case '13': toggle('ALWAYS_ONLINE'); break;
-                case '14': toggle('AUTO_BIO'); break;
-                case '15': toggle('AUTO_STATUS_SEEN'); break;
-                case '16': toggle('AUTO_STATUS_REPLY'); break;
-                case '17': toggle('AUTO_VOICE'); break;
-                case '18': toggle('AUTO_STICKER'); break;
-                case '19': toggle('AUTO_REPLY'); break;
-                case '20': toggle('READ_CMD'); break;
-                case '21': toggle('DELETE_LINKS'); break;
-                case '22': toggle('ADMIN_EVENTS'); break;
-                case '23': toggle('PUBLIC_MODE'); break;
-                case '24': toggle('AUTO_BLOCK'); break;
-                default: reply("❌ Invalid option. Reply with a number from the menu.");
-            }
+            const tokens = optText.split(/\s+/);
+            let opt = tokens[0].toLowerCase();
+            let value = tokens.slice(1).join(' ');
+            const result = processSettingChoice(opt, value);
+            if (result) return reply(result);
+            reply("❌ Invalid option. Reply with a number from the menu.");
         });
     
     } catch (e) {
@@ -1219,6 +1252,322 @@ cmd({
             await conn.sendMessage(from, { image: { url: data.result }, caption: `🎨 *Prompt:* ${q}\n\nGenerated by Shitsu MD` }, { quoted: mek });
         }
     } catch (e) { reply("Error generating image."); }
+});
+
+// ==========================================
+//              🤖 GPT AI
+// ==========================================
+
+cmd({
+    pattern: "gpt",
+    alias: ["ai", "chatgpt"],
+    react: "🤖",
+    desc: "Chat with GPT AI",
+    category: "ai",
+    filename: __filename
+}, async (conn, mek, m, { from, q, reply }) => {
+    if (!q) {
+        return reply(
+            "⚠️ Please provide a question after .gpt\n\n" +
+            "Example: .gpt What is quantum computing?"
+        );
+    }
+
+    await conn.sendMessage(from, {
+        react: { text: '🤖', key: mek.key }
+    });
+
+    try {
+        const apiUrl = `https://iamtkm.vercel.app/ai/gpt5?apikey=tkm&text=${encodeURIComponent(q)}`;
+        const { data } = await axios.get(apiUrl);
+        const replyText = data?.result;
+
+        if (replyText) {
+            return conn.sendMessage(from, { text: replyText }, { quoted: mek });
+        }
+
+        throw new Error('No valid response from AI API');
+    } catch (error) {
+        console.error('[GPT Error]', {
+            message: error.message,
+            response: error.response?.data || null,
+        });
+
+        const errorMessage = error.response?.status === 429
+            ? "❌ Rate limit exceeded. Please try again later."
+            : "❌ Failed to reach AI API.";
+
+        return reply(errorMessage);
+    }
+});
+
+// ==========================================
+//              🤖 BARD AI
+// ==========================================
+
+cmd({
+    pattern: "bard",
+    react: "🤖",
+    desc: "Chat with Google Bard AI",
+    category: "ai",
+    filename: __filename
+}, async (conn, mek, m, { from, q, reply }) => {
+    if (!q) {
+        return reply("❌ Please provide a query for Google Bard AI!\n\nExample: .bard What is artificial intelligence?");
+    }
+
+    if (q.length > 1000) {
+        return reply("📝 Query too long! Max 1000 characters.");
+    }
+
+    await conn.sendMessage(from, {
+        react: { text: '📥', key: mek.key }
+    });
+
+    await conn.sendPresenceUpdate('composing', from);
+
+    try {
+        const { data } = await axios.get(`https://apiskeith.top/ai/bard?q=${encodeURIComponent(q)}`, { timeout: 30000 });
+
+        if (!data?.status || !data?.result) {
+            throw new Error("API failed to generate response!");
+        }
+
+        await conn.sendMessage(from, {
+            react: { text: '✅', key: mek.key }
+        });
+
+        await conn.sendMessage(from, {
+            text: `🤖 *Google Bard AI Assistant*\n\n📝 *Query:* ${q}\n\n💬 *Response:*\n${data.result.trim()}\n\n> *Powered by Keith's Bard AI API*`
+        }, { quoted: mek });
+
+        await conn.sendMessage(from, {
+            react: { text: '📤', key: mek.key }
+        });
+
+    } catch (error) {
+        console.error("Bard AI command error:", error);
+
+        await conn.sendMessage(from, {
+            react: { text: '❌', key: mek.key }
+        });
+
+        let errorMessage;
+        if (error.response?.status === 404) errorMessage = 'Google Bard API endpoint not found!';
+        else if (error.message.includes('timeout') || error.code === 'ECONNABORTED') errorMessage = 'Request timed out! Try again.';
+        else if (error.code === 'ENOTFOUND') errorMessage = 'Cannot connect to Google Bard service!';
+        else if (error.response?.status === 429) errorMessage = 'Too many requests! Please try again later.';
+        else if (error.response?.status >= 500) errorMessage = 'Google Bard service is currently unavailable.';
+        else if (error.message.includes('API failed')) errorMessage = 'Google Bard failed to generate a response.';
+        else errorMessage = `Error: ${error.message}`;
+
+        return conn.sendMessage(from, { text: `🚫 ${errorMessage}` }, { quoted: mek });
+    }
+});
+
+// ==========================================
+//              🤖 COPILOT AI
+// ==========================================
+
+cmd({
+    pattern: "copilot",
+    react: "🤖",
+    desc: "Chat with Microsoft Copilot AI",
+    category: "ai",
+    filename: __filename
+}, async (conn, mek, m, { from, q, reply }) => {
+    if (!q) {
+        return reply("❌ Please provide a question for the AI!\n\nExample: .copilot What is artificial intelligence?");
+    }
+
+    if (q.length > 1000) {
+        return reply("📝 Question too long! Max 1000 characters.");
+    }
+
+    await conn.sendMessage(from, {
+        react: { text: '📡', key: mek.key }
+    });
+
+    await conn.sendPresenceUpdate('composing', from);
+
+    try {
+        const { data } = await axios.get(`https://iamtkm.vercel.app/ai/copilot?apikey=tkm&text=${encodeURIComponent(q)}`, { timeout: 30000 });
+
+        if (!data.status || !data.result) {
+            throw new Error("API failed to generate response!");
+        }
+
+        await conn.sendMessage(from, {
+            react: { text: '✅', key: mek.key }
+        });
+
+        await conn.sendMessage(from, {
+            text: `🤖 *Copilot AI Assistant*\n\n📝 *Question:* ${q}\n\n💬 *Response:* ${data.result.trim()}\n\n ↘️ *Powered by Microsoft Copilot*`
+        }, { quoted: mek });
+
+    } catch (error) {
+        console.error("Copilot command error:", error);
+
+        await conn.sendMessage(from, {
+            react: { text: '❌', key: mek.key }
+        });
+
+        let errorMessage;
+        if (error.response?.status === 404) errorMessage = 'API endpoint not found!';
+        else if (error.message.includes('timeout') || error.code === 'ECONNABORTED') errorMessage = 'Request timed out! Try again.';
+        else if (error.code === 'ENOTFOUND') errorMessage = 'Cannot connect to AI service!';
+        else if (error.response?.status === 429) errorMessage = 'Too many requests! Please try again later.';
+        else if (error.response?.status >= 500) errorMessage = 'Copilot service is currently unavailable.';
+        else errorMessage = `Error: ${error.message}`;
+
+        return conn.sendMessage(from, { text: `🚫 ${errorMessage}` }, { quoted: mek });
+    }
+});
+
+// ==========================================
+//              🤖 META AI
+// ==========================================
+
+cmd({
+    pattern: "metai",
+    react: "🤖",
+    desc: "Chat with Meta AI",
+    category: "ai",
+    filename: __filename
+}, async (conn, mek, m, { from, q, reply }) => {
+    if (!q) {
+        return reply("❌ Please provide a query for Meta AI!\n\nExample: .metai What is artificial intelligence?");
+    }
+
+    if (q.length > 1000) {
+        return reply("📝 Query too long! Max 1000 characters.");
+    }
+
+    await conn.sendMessage(from, {
+        react: { text: '⤵️', key: mek.key }
+    });
+
+    await conn.sendPresenceUpdate('composing', from);
+
+    try {
+        const { data } = await axios.get(`https://apiskeith.top/ai/metai?q=${encodeURIComponent(q)}`, { timeout: 30000 });
+
+        if (!data?.status || !data?.result) {
+            throw new Error("API failed to generate response!");
+        }
+
+        await conn.sendMessage(from, {
+            react: { text: '✅', key: mek.key }
+        });
+
+        await conn.sendMessage(from, {
+            text: `🤖 *Meta AI Assistant*\n\n📝 *Query:* ${q}\n\n💬 *Response:*\n ${data.result.trim()}\n\n> *Powered by Meta AI*`
+        }, { quoted: mek });
+
+        await conn.sendMessage(from, {
+            react: { text: '📤', key: mek.key }
+        });
+
+    } catch (error) {
+        console.error("Meta AI command error:", error);
+
+        await conn.sendMessage(from, {
+            react: { text: '❌', key: mek.key }
+        });
+
+        let errorMessage;
+        if (error.response?.status === 404) errorMessage = 'API endpoint not found!';
+        else if (error.message.includes('timeout') || error.code === 'ECONNABORTED') errorMessage = 'Request timed out! Try again.';
+        else if (error.code === 'ENOTFOUND') errorMessage = 'Cannot connect to AI service!';
+        else if (error.response?.status === 429) errorMessage = 'Too many requests! Please try again later.';
+        else if (error.response?.status >= 500) errorMessage = 'Meta AI service is currently unavailable.';
+        else if (error.message.includes('API failed')) errorMessage = 'Meta AI failed to generate a response.';
+        else errorMessage = `Error: ${error.message}`;
+
+        return conn.sendMessage(from, { text: `🚫 ${errorMessage}` }, { quoted: mek });
+    }
+});
+
+// ==========================================
+//              🤖 GPT-4
+// ==========================================
+
+cmd({
+    pattern: "gpt4",
+    react: "🤖",
+    desc: "Chat with GPT-4 AI",
+    category: "ai",
+    filename: __filename
+}, async (conn, mek, m, { from, q, reply }) => {
+    if (!q) {
+        return reply("❌ Please provide a question to ask GPT-4!\n\nExample: .gpt4 What is artificial intelligence?");
+    }
+
+    if (q.length > 1000) {
+        return reply("📝 Question too long! Max 1000 characters.");
+    }
+
+    await conn.sendMessage(from, {
+        react: { text: '💭', key: mek.key }
+    });
+
+    await conn.sendPresenceUpdate('composing', from);
+
+    try {
+        const { data } = await axios.get(`https://meta-api.zone.id/ai/chatgptfree?prompt=${encodeURIComponent(q)}`, { timeout: 30000 });
+
+        let aiResponse = '';
+
+        if (data?.answer && typeof data.answer === 'string') aiResponse = data.answer.trim();
+        else if (data?.response && typeof data.response === 'string') aiResponse = data.response.trim();
+        else if (data?.message && typeof data.message === 'string') aiResponse = data.message.trim();
+        else if (data?.text && typeof data.text === 'string') aiResponse = data.text.trim();
+        else if (data?.data && typeof data.data === 'string') aiResponse = data.data.trim();
+        else if (data?.content && typeof data.content === 'string') aiResponse = data.content.trim();
+        else if (typeof data === 'string') aiResponse = data.trim();
+        else if (data?.data && typeof data.data === 'object') {
+            for (const key in data.data) {
+                if (typeof data.data[key] === 'string' && data.data[key].trim().length > 0) {
+                    aiResponse = data.data[key].trim();
+                    break;
+                }
+            }
+        }
+
+        if (!aiResponse) {
+            console.log("API Response structure:", JSON.stringify(data, null, 2));
+            throw new Error("API returned empty or invalid response!");
+        }
+
+        if (aiResponse.length > 4000) {
+            aiResponse = aiResponse.substring(0, 4000) + "...\n\n(Response truncated due to length limits)";
+        }
+
+        await conn.sendMessage(from, {
+            react: { text: '✅', key: mek.key }
+        });
+
+        await conn.sendMessage(from, {
+            text: `🤔 *GPT-4*\n\n📝 *Question:* ${q}\n\n💬 *Response:* ${aiResponse}\n\n📊 *Powered by OpenAI & Gpt-4*`
+        }, { quoted: mek });
+
+    } catch (error) {
+        console.error("GPT-4 command error:", error);
+
+        await conn.sendMessage(from, {
+            react: { text: '❌', key: mek.key }
+        });
+
+        let errorMessage = 'An error occurred while processing your request.';
+        if (error.response?.status === 404) errorMessage = 'API endpoint not found!';
+        else if (error.response?.status === 429) errorMessage = 'Too many requests! Please try again later.';
+        else if (error.response?.status >= 500) errorMessage = 'Server error! The AI service is having issues.';
+        else if (error.message.includes('timeout')) errorMessage = 'Request timed out!';
+        else if (error.code === 'ENOTFOUND') errorMessage = 'Cannot connect to AI service!';
+        else errorMessage = `Error: ${error.message}`;
+
+        return conn.sendMessage(from, { text: `🚫 ${errorMessage}` }, { quoted: mek });
+    }
 });
 
 // ==========================================
