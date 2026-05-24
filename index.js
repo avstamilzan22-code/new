@@ -332,7 +332,7 @@ async function connectToWA() {
           if (settings.welcome) {
             try {
               // Get user's profile picture
-              const ppUrl = await getProfilePicture(sock, participant);
+              const ppUrl = await getProfilePicture(sock, participantFullJid);
               
               // Format welcome message with variables
               let welcomeText = settings.welcomeMsg || DEFAULT_WELCOME;
@@ -346,12 +346,12 @@ async function connectToWA() {
               await sock.sendMessage(id, {
                 image: { url: ppUrl },
                 caption: welcomeText,
-                mentions: [participant]
+                mentions: [participantFullJid]
               }).catch(async () => {
                 // Fallback to text if image fails
                 await sock.sendMessage(id, {
                   text: welcomeText,
-                  mentions: [participant]
+                  mentions: [participantFullJid]
                 });
               });
               
@@ -366,7 +366,7 @@ async function connectToWA() {
           if (settings.goodbye) {
             try {
               // Get user's profile picture
-              const ppUrl = await getProfilePicture(sock, participant).catch(() => 'https://shyra.edgeone.app/bot-img.png');
+              const ppUrl = await getProfilePicture(sock, participantFullJid).catch(() => 'https://shyra.edgeone.app/bot-img.png');
               
               // Format goodbye message with variables
               let goodbyeText = settings.goodbyeMsg || DEFAULT_GOODBYE;
@@ -379,12 +379,12 @@ async function connectToWA() {
               await sock.sendMessage(id, {
                 image: { url: ppUrl },
                 caption: goodbyeText,
-                mentions: [participant]
+                mentions: [participantFullJid]
               }).catch(async () => {
                 // Fallback to text if image fails
                 await sock.sendMessage(id, {
                   text: goodbyeText,
-                  mentions: [participant]
+                  mentions: [participantFullJid]
                 });
               });
               
